@@ -1,0 +1,14 @@
+<app-panel-colored [bgImg]="bgImg" [color]="color">
+    <app-gallery-card [size]="size" [sizeTablet]="sizeTablet" [orientation]="orientation" [color]="color" padding="none" [image]="image" [title]="title" [lines]="lines">
+    </app-gallery-card>
+</app-panel-colored>
+
+<ng-container *ngIf="images.length > 1 else singleImage">
+    <div class="row">
+        <app-gallery-image *ngFor="let image of images" [image]="image"></app-gallery-image>
+    </div>
+</ng-container>
+
+<ng-template #singleImage>
+    <app-gallery-image [image]="images[0]"></app-gallery-image>
+</ng-template>

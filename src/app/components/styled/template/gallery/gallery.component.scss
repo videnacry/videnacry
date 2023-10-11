@@ -1,0 +1,31 @@
+@font-face {
+    font-family: arigatou;
+    src: url('./fonts/arigatou.ttf');
+}
+  
+* {
+  font-family: arigatou;
+}
+
+
+
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+}
+:host>* {
+    flex-grow: 1;
+}
+iframe {
+    width: 100%;
+    max-height: 100%;
+    height: auto;
+}
+
+.filter {
+    max-width: 30vw;
+}
+.filter p {
+    margin: 0
+}

@@ -1,0 +1,23 @@
+<app-panel-colored [color]="color">
+    <div [class.is-column]="isColumn" [class.is-row]="!isColumn">
+        <app-standard-size *ngIf="upStyle.shouldStyle else up_sized" [size]="upStyle.size" [sizeTablet]="upStyle.sizeTablet" [orientation]="upStyle.orientation">
+            <ng-container *ngTemplateOutlet="upStyle.template ? upStyle.template : null"></ng-container>
+        </app-standard-size>
+        <app-standard-size *ngIf="downStyle.shouldStyle else down_sized" [size]="downStyle.size" [sizeTablet]="downStyle.sizeTablet" [orientation]="downStyle.orientation">
+            <ng-container *ngTemplateOutlet="downStyle.template ? downStyle.template : null"></ng-container>
+        </app-standard-size>
+    </div>
+</app-panel-colored>
+
+
+
+<ng-template #up_sized>
+    <div class="first">
+        <ng-content select="[first]"></ng-content>
+    </div>
+</ng-template>
+<ng-template #down_sized>
+    <div class="second">
+        <ng-content select="[second]"></ng-content>
+    </div>
+</ng-template>

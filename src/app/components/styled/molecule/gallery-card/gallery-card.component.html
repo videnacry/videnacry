@@ -1,0 +1,10 @@
+<app-standard-size [size]="size" [sizeTablet]="sizeTablet" [orientation]="orientation" [grow]="grow" >
+    <app-panel-colored [color]="color">
+        <div class="m-row">
+            <app-standard-size [size]="image.size" [padding]="false" [border]="false">
+                <img left width="100%" [src]="image.path" alt="profile picture"/>
+            </app-standard-size>
+            <app-article right [title]="windowInnerWidth < 700 ? '':title " [lines]="lines" [padding]="padding"></app-article>
+        </div>
+    </app-panel-colored>
+</app-standard-size>

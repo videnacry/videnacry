@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+:host.width-change-direction {
+    display: contents;
+}
+:host *, .width-change-direction * {
+    flex-grow: 1;
+}
+.m-column_up, .m-column_down {
+    display: flex;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+.m-column_up>*, .m-column_down>* {
+    flex-grow: 1;
+}
+
+
+.width-change-direction {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100%;
+}

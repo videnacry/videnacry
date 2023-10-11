@@ -1,0 +1,25 @@
+
+
+<!-- <ng-container *ngIf="windowInnerWidth < 700 else verticalTemplate">
+    
+    <app-panel-colored [color]="color" [bgInvert]="true">
+        <app-panel-colored [color]="color">
+            <app-article [padding]="padding" [title]="title" [lines]="lines"></app-article>
+        </app-panel-colored>
+    </app-panel-colored>
+
+</ng-container>
+
+
+
+<ng-template #verticalTemplate> -->
+
+    <app-panel-colored [color]="color" [bgInvert]="true">
+        <app-standard-size [size]="size" [sizeTablet]="sizeTablet" [orientation]="orientation">
+            <app-panel-colored [color]="color">
+                <app-article [padding]="padding" [title]="title" [lines]="lines"></app-article>
+            </app-panel-colored>
+        </app-standard-size>
+    </app-panel-colored>
+
+<!-- </ng-template> -->

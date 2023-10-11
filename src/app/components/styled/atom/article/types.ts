@@ -1,0 +1,1 @@
+export type padding = 'none'|'sm'|'md'

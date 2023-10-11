@@ -1,0 +1,12 @@
+<app-panel-colored [bgImg]="bgImg" [color]="color">
+    <app-standard-size [size]="size" [sizeTablet]="sizeTablet" [orientation]="orientation">
+        <app-panel-colored [color]="color">
+            <div class="column" [class.screen-change-direction]="screenChangeDirection">
+                <h1 *ngIf="title">{{title}}</h1>
+                <ng-content selector="top"></ng-content>
+                <ng-content selector="bottom"></ng-content>
+            </div>
+        </app-panel-colored>
+    </app-standard-size>
+</app-panel-colored>
+<app-gallery-image [image]="image"></app-gallery-image>

@@ -1,0 +1,23 @@
+<ng-container *ngIf = "widthChangeDirection.shouldChange else noChangeDirection">
+    <app-standard-size [size]="widthChangeDirection.sizeToChange" [padding]="false" [orientation]="widthChangeDirection.orientation">
+        <div class="width-change-direction">
+            <div class="m-column_up">
+                <app-gallery-image  *ngFor="let image of imagesUp" [image]="image"></app-gallery-image>
+            </div>
+            <div class="m-column_down">
+                <app-gallery-image  *ngFor="let image of imagesDown" [image]="image"></app-gallery-image>
+            </div>
+        </div>
+    </app-standard-size>
+</ng-container>
+
+
+
+<ng-template #noChangeDirection>
+    <div class="m-column_up">
+        <app-gallery-image  *ngFor="let image of imagesUp" [image]="image"></app-gallery-image>
+    </div>
+    <div class="m-column_down">
+        <app-gallery-image  *ngFor="let image of imagesDown" [image]="image"></app-gallery-image>
+    </div>
+</ng-template>

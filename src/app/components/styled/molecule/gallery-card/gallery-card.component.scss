@@ -1,0 +1,12 @@
+:host {
+    display: flex;
+    justify-content: center;
+}
+:host.grow {
+    flex-grow: 1;
+}
+.m-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

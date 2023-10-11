@@ -1,0 +1,11 @@
+:host {
+    display: flex;
+    flex-direction: column;
+}
+img {
+    border: none;
+}
+.row {
+    display: flex;
+    justify-content: space-evenly;
+}

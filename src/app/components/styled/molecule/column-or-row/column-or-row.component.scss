@@ -1,0 +1,14 @@
+.is-column, .is-row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: stretch;
+}
+.is-column {
+    flex-direction: column;
+}
+.is-row > .first, .is-row > .second{
+    width: 46%;
+}
+.is-column > .first, .is-column > .second{
+    height: 46%;
+}
