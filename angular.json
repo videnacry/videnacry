@@ -35,7 +35,17 @@
               },
               {
                 "glob": "**/*",
-                "input": "src/app/components/styled/atom/panel-colored/img/",
+                "input": "src/app/components/styled/atom/panel-colored/images/",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/components/styled/organism/gallery-modal-img/img-little-gallery/images",
+                "output": "/assets/"
+              },
+              {
+                "glob": "**/*",
+                "input": "src/app/components/styled/organism/gallery-modal-img/images",
                 "output": "/assets/"
               }
             ],

@@ -14,6 +14,8 @@ import { ArticleComponent } from './components/styled/atom/article/article.compo
 import { GalleryColumnComponent } from './components/styled/molecule/gallery-column/gallery-column.component';
 import { GalleryColumnCardImgComponent } from './components/styled/organism/gallery-column-card-img/gallery-column-card-img.component';
 import { GalleryColumnImgTemplateComponent } from './components/styled/organism/gallery-column-img-template/gallery-column-img-template.component';
+import { GalleryModalImgComponent } from './components/styled/organism/gallery-modal-img/gallery-modal-img.component';
+import { ImgLittleGalleryComponent } from './components/styled/organism/gallery-modal-img/img-little-gallery/img-little-gallery.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { GalleryColumnImgTemplateComponent } from './components/styled/organism/
     ArticleComponent,
     GalleryColumnComponent,
     GalleryColumnCardImgComponent,
-    GalleryColumnImgTemplateComponent
+    GalleryColumnImgTemplateComponent,
+    GalleryModalImgComponent,
+    ImgLittleGalleryComponent
   ],
   imports: [
     BrowserModule,

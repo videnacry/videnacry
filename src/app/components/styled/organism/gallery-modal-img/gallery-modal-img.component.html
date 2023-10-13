@@ -1,0 +1,39 @@
+<!-- 
+<app-standard-size *ngIf="size else modal" [size]="size">
+    <ng-container *ngTemplateOutlet="modal"></ng-container>
+</app-standard-size>
+
+<ng-template #modal> -->
+
+    <div class="size-shape">
+        <ng-content select="[size-shape]"></ng-content>
+    </div>
+    <div class="gallery-modal-img-c">
+        <div class="header">
+            <p class="name">Artwork details</p>
+            <button class="close">
+                <div class="img"></div>
+            </button>
+        </div>
+        <div class="details">
+            <div class="little-gallery">
+                <h3 class="title">{{image.title}}</h3>
+                <app-img-little-gallery [image]="image"></app-img-little-gallery>
+            </div>
+            <ng-container *ngIf="image.lines.length > 1 then lines else line"></ng-container>
+        </div>
+        <div class="footer">
+            <label for="limit-modals"  class="option">Have just one opened</label>
+            <input id="limit-modals" class="option-check" type="checkbox">
+        </div>
+    </div>
+
+<!-- </ng-template> -->
+
+
+<ng-template #lines>
+    <p class="description" *ngFor="let line of image.lines"></p>
+</ng-template>
+<ng-template #line>
+    <p class="description">{{image.lines[0]}}</p>
+</ng-template>

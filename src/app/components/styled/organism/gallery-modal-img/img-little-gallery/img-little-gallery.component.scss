@@ -1,0 +1,46 @@
+@use '../gallery-modal-img.component.scss' as c;
+
+$base-bg-img: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%, rgb(30, 30, 30) 80%);
+
+
+.img-little-gallery-c {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .frame {
+        position: absolute;
+        left: 0;
+        bottom: 2.2em;
+        width: 100%;
+        height: 65%;
+        background-image: $base-bg-img;
+        .options {
+            position: absolute;
+            bottom: -.6em;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            .option {
+                position: relative;
+                width: 2.4em;
+                height: 2.4em;
+                margin: 0 1.4vmin;
+                padding: 1vmin;
+                @include c.box-dark;
+                .img {
+                    @include c.bg-img-btn;
+                }
+            }
+        }
+    }
+    .img {
+        position: absolute;
+        top: .6em;
+        left: 4%;
+        width: 92%;
+        height: calc(100% - 4em);
+        background-size: cover;
+        background-position: center;
+    }
+}
