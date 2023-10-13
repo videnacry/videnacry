@@ -3,6 +3,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
+:host.grow {
+    flex-grow: 1;
+}
 :host.width-change-direction {
     display: contents;
 }

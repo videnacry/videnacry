@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { color } from '../../../../types'
-import { orientation, size } from '../../atom/standard-size/type';
 import { ColumnOrRowProjection } from './class';
 
 
@@ -19,6 +18,5 @@ export class ColumnOrRowComponent{
 
   @Input() color:color = 'primary'
   
-
 
 }

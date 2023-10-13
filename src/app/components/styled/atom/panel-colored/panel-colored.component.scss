@@ -35,20 +35,20 @@
 }
 
 :host.primary::before {
-    background-image: url('./img/primary.webp');
+    background-image: url('./images/primary.webp');
 }
 :host.success::before {
-    background-image: url('./img/success.webp');
+    background-image: url('./images/success.webp');
 }
 :host.secondary::before {
-    background-image: url('./img/secondary.webp');
+    background-image: url('./images/secondary.webp');
     opacity: .6;
 }
 :host.light::before {
-    background-image: url('./img/light.webp');
+    background-image: url('./images/light.webp');
 }
 :host.dark::before {
-    background-image: url('./img/dark.webp');
+    background-image: url('./images/dark.webp');
 }
 :host.img::before, :host.bg-invert::before {
     background-blend-mode: color;

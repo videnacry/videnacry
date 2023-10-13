@@ -10,20 +10,20 @@
 
 @media screen and (max-width:2200px) {
     :host.sm {
-        padding: calc(2.4vmax / 1.5);
+        padding: calc(2vmax / 1.5);
     }
     :host.md {
-        padding: calc(5vmax / 1.5);
+        padding: calc(4vmax / 1.5);
     }
 }
 
 
 @media screen and (max-width:940px) {
     :host.sm {
-        padding: calc(1.4vmax / 1.5);
+        padding: calc(1.2vmax / 1.5);
     }
     :host.md {
-        padding: calc(3vmax / 1.5);
+        padding: calc(2.6vmax / 1.5);
     }
     h1 {
         margin-top: 0;

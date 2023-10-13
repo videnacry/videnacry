@@ -15,11 +15,15 @@ export class GalleryArticleComponent {
   
   @Input() size:size = 'a5'
   @Input() sizeTablet:size = 'a4'
-  @Input() padding:padding = 'sm'
   @Input() orientation:orientation = 'vertical'
+
+  @Input() padding:padding = 'sm'
   @Input() color:color = 'primary'
+
   @Input() title:string = ''
   @Input() lines:string[] = ['']
+
   
   @HostBinding('class') get colorClass():string {return this.color}
+  @HostBinding('class.grow') @Input() grow:boolean = true
 }

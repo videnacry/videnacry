@@ -17,4 +17,6 @@ export class StandardSizeComponent {
   @HostBinding('class.grow') @Input() grow:boolean = true
   @HostBinding('class.padding') @Input() padding:boolean = true
   @HostBinding('class.border') @Input() border:boolean = true
+
+  @HostBinding('class.max-width') @Input() maxWidth:boolean = false
 }

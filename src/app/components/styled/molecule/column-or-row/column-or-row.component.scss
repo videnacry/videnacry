@@ -1,7 +1,11 @@
+:host {
+    flex-grow: 1;
+}
 .is-column, .is-row {
     display: flex;
     justify-content: space-evenly;
     align-items: stretch;
+    flex-grow: 1;
 }
 .is-column {
     flex-direction: column;

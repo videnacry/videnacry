@@ -1,3 +1,6 @@
 :host> {
     padding: 8vmin;
 }
+:host.grow {
+    flex-grow: 1;
+}
