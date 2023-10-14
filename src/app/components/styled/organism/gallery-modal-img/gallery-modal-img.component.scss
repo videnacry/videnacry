@@ -40,13 +40,14 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
 }
 
 :host {
-    position: relative;
+    flex-grow:1;
     overflow: hidden;
-    aspect-ratio: 1/1.5;
 }
 
-.size-shape {
-    visibility: hidden;
+.container_gallery-modal-img {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1/1.6;
 }
 
 .gallery-modal-img-c {
@@ -75,11 +76,7 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
             position: relative;
             width: 1em;
             height: 1em;
-            border-radius: 4px;
-            border: 1px solid #5b5b5b;
-            color: white;
-            font-size: 1.2em;
-            background-image: $base-bg-img;
+            @include box-dark;
             >.img {
                 @include bg-img-btn;
                 background-image: url('/assets/x.svg');
@@ -88,6 +85,7 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
     }
     >.details {
         overflow: hidden;
+        height: 100%;
         margin: 0 1vmin;    
         padding: 10px;
         background-image: $base-bg-img-lighter;
@@ -102,7 +100,7 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
             height: 67%;
         }
         >.description {
-            overflow-y: scroll;
+            overflow-y: auto;
             overflow-x: hidden;
             height: 32%;
             margin: unset;

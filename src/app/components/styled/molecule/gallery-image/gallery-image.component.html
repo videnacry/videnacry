@@ -1,5 +1,5 @@
 <app-panel-colored [color]="image.color" [bgImg]="image.path">
     <app-standard-size [size]="image.size" [sizeTablet]="image.sizeTablet" [orientation]="image.orientation" [grow]="grow">
-        <img [src]="image.path" alt="" width="100%"/>
+        <img [src]="image.path" alt="" width="100%" (click)="handlerClick(image)"/>
     </app-standard-size>
 </app-panel-colored>

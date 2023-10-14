@@ -27,6 +27,8 @@ export class GalleryImage {
     sizeTablet:size = 'unset'
     orientation:orientation = 'vertical'
 
+    handlerClick:Function = () => {}
+
 
     constructor ({pColor = 'primary', pPath = '', pSize = 'a5', pSizeTablet = 'unset', pOrientation = 'vertical', pTitle = '', pLines = ['']}:pGalleryImage) {
 
@@ -55,6 +57,11 @@ export class GalleryImage {
     
     changeSizeOrientation = (pSizeOrientation:orientation) => {
         this.orientation = pSizeOrientation
+        return this
+    }
+
+    changeHandlerClick = (handler:any) => {
+        this.handlerClick = handler
         return this
     }
 }

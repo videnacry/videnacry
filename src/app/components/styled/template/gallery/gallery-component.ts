@@ -1,17 +1,13 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
-import { GalleryImages } from './db/gallery.images';
-import { GalleryImage } from '../../molecule/gallery-image/class';
-import { ColumnOrRowProjection } from '../../molecule/column-or-row/class';
+import { TemplateRef } from "@angular/core";
+import { ColumnOrRowProjection } from "../../molecule/column-or-row/class";
+import { GalleryImages } from "./db/gallery.images";
 
-@Component({
-  selector: 'app-gallery',
-  templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.scss']
-})
-export class GalleryComponent{
 
+
+export class GalleryComponent {
+
+    
   images:GalleryImages = GalleryImages.instance
-  windowInnerWidth:number = window.innerWidth
 
   musicUpProjectionObj:ColumnOrRowProjection = new ColumnOrRowProjection({pShouldStyle:true })
   musicDownProjectionObj:ColumnOrRowProjection = new ColumnOrRowProjection({pShouldStyle:true })
@@ -26,6 +22,4 @@ export class GalleryComponent{
     this.musicDownProjectionObj.template = pTemplate
     return this.musicDownProjectionObj
   }
-
-
 }

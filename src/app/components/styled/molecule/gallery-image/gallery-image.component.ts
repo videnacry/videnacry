@@ -11,4 +11,8 @@ export class GalleryImageComponent {
   
   @Input() image:GalleryImage = new GalleryImage({})
   @HostBinding('class.grow') @Input() grow:boolean = true
+
+  handlerClick(pImage:GalleryImage) {
+    pImage.handlerClick()
+  }
 }

@@ -1,4 +1,18 @@
 
 
 
-<app-gallery></app-gallery>
+
+<ng-container *ngIf="windowInnerWidth >= 1200" >
+    <app-gallery-desktop></app-gallery-desktop>
+</ng-container>
+
+
+<ng-container *ngIf="(windowInnerWidth >= 700 && windowInnerWidth <1200)">
+    <app-gallery-tablet></app-gallery-tablet>
+</ng-container>
+
+
+
+<ng-container *ngIf="windowInnerWidth < 700">
+    <app-gallery-phone></app-gallery-phone>
+</ng-container>

@@ -1,0 +1,58 @@
+<app-gallery-column [imagesUp]="[images.portrait]" [imagesDown]="[images.ivelina]"></app-gallery-column>
+    <app-gallery-image [image]="images.awareness"></app-gallery-image>
+    
+    <app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="secondary" title="Intro" [lines]='["Bien aventurado sea por detenerme a observarme, en el infinito que todo y nada existe vamos a a detener nuestro yo para participar del nosotros y a agradeciendo a la división podremos señalar al infinito y reduciro a vagas palabras para mostrar algo con esta obra a mis ahora otros yo."]'></app-gallery-article>
+    
+    <app-gallery-column [imagesUp]="[images.demon.changeSize('a5')]" [imagesDown]="[images.jellyfish]"></app-gallery-column>
+    <app-gallery-image [image]="images.mage"></app-gallery-image>
+        
+    <app-column-or-row>
+        <app-gallery-column first [imagesDown]="[images.goat.changeSizeOrientation('vertical'), images.lion.changeSizeTablet('a4').changeSize('a5')]" ></app-gallery-column>
+        <app-gallery-column second [imagesDown]="[images.turkey, images.bull]" [imagesUp]="[images.deity.changeSize('a3')]"></app-gallery-column>
+    </app-column-or-row> 
+    <app-gallery-column [imagesUp]="[images.pirates.changeSize('a4')]" [imagesDown]="[images.christian.changeSize('a4')]"></app-gallery-column>
+    
+    <app-gallery-card [image]="images.biography" size="a-max" sizeTablet="a-max" color="primary" orientation="horizontal" title="Biography" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-card>
+    
+    <app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="light" title="Reflexión" [lines]="['Puede convivir el miedo y la adoración...',
+    'Miedo a los insectos, los animales, la “mala hierba”..., pero respeto hacia su vida... buscar su bienestar...',
+    'Se dice que no existen en otros planetas, trabajan por el ecosistema..., y son tristemente masacrados sin piedad, por seres “inteligentes”...']"></app-gallery-article>
+    
+    <app-gallery-image [image]="images.jungle.changeSizeTablet('a3').changeSize('a3')"></app-gallery-image>
+    <app-gallery-column [imagesUp]="[images.liondragon.changeSizeTablet('a3').changeSize('a3').changeSizeOrientation('vertical')]" [imagesDown]="[images.pact.changeSizeTablet('a3').changeSize('a3').changeSizeOrientation('vertical')]"></app-gallery-column>
+    
+    <app-gallery-image [image]="images.lovers.changeSizeTablet('a0').changeSizeOrientation('vertical').changeSize('a0')"></app-gallery-image>
+    
+    <app-gallery-image [image]="images.panther"></app-gallery-image>
+    <app-gallery-image [image]="images.luciana"></app-gallery-image>
+    <app-gallery-image [image]="images.osho"></app-gallery-image>
+
+    <app-gallery-image [image]="images.role"></app-gallery-image>
+    <app-column-or-row color="dark"  [upStyle]="getUpTemplate(musicUpProjection)" [downStyle]="getDownTemplate(musicDownProjection)">
+    </app-column-or-row>
+    <ng-template #musicUpProjection>
+        <iframe  up-projection   src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </ng-template>
+    <ng-template #musicDownProjection>
+        <iframe  down-projection   src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </ng-template>
+
+    <app-gallery-article sizeTablet="a-max"  size="a-max" padding="md" color="success" title="Vision" [lines]='["I like to think in small details like tiny little beings full of live, civilizations which are hard to see in comparison to our own size, like watching with a microscope to reveal the microcosms!",
+    "I want to get better with the small and big shapes in my drawings!",
+    "I hope to make more spiritual like pictures."]'></app-gallery-article>
+    
+    <app-gallery-image [image]="images.condor.changeSize('a4')"></app-gallery-image>
+    <app-gallery-image [image]="images.raulitos.changeSizeOrientation('horizontal').changeSize('a3').changeSizeTablet('a0')"></app-gallery-image>
+    
+    <app-gallery-image [image]="images.hodgepodge.changeSize('a-max')"></app-gallery-image>
+
+    <app-gallery-image [image]="images.camera"></app-gallery-image>
+    <app-column-or-row color="dark" size="a1">
+        <ng-container first>
+            <label class="filter" for="hue-rotate"><p>hue-rotate</p></label><input class="filter" type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
+        </ng-container>
+        <ng-container second>
+            <label class="filter" for="color-invert"><p>color-invert</p></label><input class="filter" type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
+        </ng-container>
+    </app-column-or-row>
+    <app-gallery-image [image]="images.snake"></app-gallery-image>
