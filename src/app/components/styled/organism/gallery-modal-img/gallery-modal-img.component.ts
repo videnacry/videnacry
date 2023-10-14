@@ -10,13 +10,19 @@ import { color } from 'src/app/types';
 })
 export class GalleryModalImgComponent {
 
+
   @Input() image:GalleryImage = new GalleryImage({})
 
-  @Input() size:size = 'a1'
-  @Input() color:color = 'dark'
+  @Input() size:size = 'a1';
+  @Input() color:color = 'dark';
 
+  @Input() isLimitedToOneModal = false;
 
-  handlerClose(image:GalleryImage) {
+  @Input() handler_toggle:Function = () => {}
+
+  
+  handler_close(image:GalleryImage) {
     image.handlerClick();
   }
+
 }

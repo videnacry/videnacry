@@ -9,6 +9,8 @@ import { GalleryImage } from '../../../molecule/gallery-image/class';
 })
 export class GalleryDesktopComponent extends GalleryComponent {
 
+  isLimitedToOneModal = true
+
   imagesGroup:imagesGroupType = {
     first: [],
     second: [],
@@ -30,6 +32,12 @@ export class GalleryDesktopComponent extends GalleryComponent {
     eighteenth: [],
   }
 
+  handler_toggleModalNumberLimitation:Function = (pImage:GalleryImage):void => {
+    this.isLimitedToOneModal = !this.isLimitedToOneModal;
+    this.removeAllModals();
+    pImage.handlerClick();
+  }
+
   getImageWithClickHandler = (pImage:GalleryImage, pGroupName:groupNameType) => {
     pImage.changeHandlerClick(this.toggleToImagesGroupHandler(pImage, pGroupName))
     return pImage;
@@ -40,12 +48,35 @@ export class GalleryDesktopComponent extends GalleryComponent {
   toggleToImagesGroup = (pImage:GalleryImage, pGroupName:groupNameType):void => {
     const imageIndexInGroup = this.imagesGroup[pGroupName].indexOf(pImage)
     if (imageIndexInGroup >= 0) {
-      this.imagesGroup[pGroupName].splice(imageIndexInGroup, 1)
+      this.isLimitedToOneModal ? this.removeAllModals() : this.imagesGroup[pGroupName].splice(imageIndexInGroup, 1)
     } else {
+      if (this.isLimitedToOneModal) this.removeAllModals()
       this.imagesGroup[pGroupName].push(pImage)
     }
   }
 
+  removeAllModals() {
+    this.imagesGroup = {
+      first: [],
+      second: [],
+      third: [],
+      fourth: [],
+      fifth: [],
+      sixth: [],
+      seventh: [],
+      eighth: [],
+      nineth: [],
+      tenth: [],
+      eleventh: [],
+      twelfth: [],
+      thirteenth: [],
+      fourteenth: [],
+      fifteenth: [],
+      sixteenth: [],
+      seventeenth: [],
+      eighteenth: [],
+    }
+  }
   
 }
 

@@ -5,7 +5,7 @@
             <div class="gallery-modal-img-c">
                 <div class="header">
                     <p class="name">Artwork details</p>
-                    <button class="close" (click)="handlerClose(image)">
+                    <button class="close" (click)="handler_close(image)">
                         <div class="img"></div>
                     </button>
                 </div>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="footer">
                     <label for="limit-modals"  class="option">Have just one opened</label>
-                    <input id="limit-modals" class="option-check" type="checkbox">
+                    <input id="limit-modals" class="option-check" type="checkbox" [checked]="isLimitedToOneModal" (change)="handler_toggle(image)">
                 </div>
             </div>
         </div>

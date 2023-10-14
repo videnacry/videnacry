@@ -5,7 +5,7 @@
 
     <ng-container #first *ngFor="let image of imagesGroup.first">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.portrait, 'first')]" [imagesDown]="[getImageWithClickHandler(images.ivelina, 'first')]"></app-gallery-column>
@@ -14,7 +14,7 @@
     
     <ng-container #second *ngFor="let image of imagesGroup.second">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-image [image]="getImageWithClickHandler(images.awareness, 'second')"></app-gallery-image>
@@ -30,7 +30,7 @@
 
     <ng-container #third *ngFor="let image of imagesGroup.third">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.raulitos.changeSize('a5'), 'third')]" [imagesDown]="[getImageWithClickHandler(images.pirates.changeSize('a4'), 'third')]"></app-gallery-column>
@@ -40,7 +40,7 @@
 
     <ng-container #fourth *ngFor="let image of imagesGroup.fourth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column-card-img [images]="[getImageWithClickHandler(images.hodgepodge, 'fourth')]" [image]="images.biography" [sizeTablet]="images.hodgepodge.sizeTablet" [size]="images.hodgepodge.size" color="primary" [orientation]="images.hodgepodge.orientation" title="Biography" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-column-card-img>
@@ -50,7 +50,7 @@
     
     <ng-container #fifth *ngFor="let image of imagesGroup.fifth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.panther, 'fifth')]" [imagesDown]="[getImageWithClickHandler(images.christian, 'fifth')]"></app-gallery-column>
@@ -60,7 +60,7 @@
 
     <ng-container #sixth *ngFor="let image of imagesGroup.sixth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>    
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.jungle.changeSize('a4'), 'sixth')]" [imagesDown]="[getImageWithClickHandler(images.liondragon.changeSize('a4'), 'sixth')]"></app-gallery-column>
@@ -70,7 +70,7 @@
 
     <ng-container #seventh *ngFor="let image of imagesGroup.seventh">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column-img-template [image]="getImageWithClickHandler(images.lion, 'seventh')" sizeTablet="a1" size="a5" color="dark" [orientation]="images.lion.orientation"  title="music!">
@@ -83,7 +83,7 @@
  
     <ng-container #eighth *ngFor="let image of imagesGroup.eighth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.turkey, 'eighth'), getImageWithClickHandler(images.luciana, 'eighth')]" [imagesDown]="[getImageWithClickHandler(images.lovers, 'eighth')]"></app-gallery-column>
@@ -93,7 +93,7 @@
 
     <ng-container #nineth *ngFor="let image of imagesGroup.nineth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>   
     <app-gallery-column-img-template [screenChangeDirection]="false" [image]="getImageWithClickHandler(images.deity.changeSize('a5'), 'nineth')" [sizeTablet]="images.deity.sizeTablet" [size]="images.deity.size" color="dark" [orientation]="images.deity.orientation" title="play with the colors!">
@@ -110,7 +110,7 @@
 
     <ng-container #tenth *ngFor="let image of imagesGroup.tenth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-image [image]="getImageWithClickHandler(images.role, 'tenth')"></app-gallery-image>
@@ -120,7 +120,7 @@
 
     <ng-container #eleventh *ngFor="let image of imagesGroup.eleventh">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.jellyfish, 'eleventh')]" [imagesDown]="[getImageWithClickHandler(images.snake, 'eleventh')]"></app-gallery-column>
@@ -130,7 +130,7 @@
 
     <ng-container #twelfth *ngFor="let image of imagesGroup.twelfth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-image [image]="getImageWithClickHandler(images.mage, 'twelfth')"></app-gallery-image>
@@ -140,7 +140,7 @@
 
     <ng-container #thirteenth *ngFor="let image of imagesGroup.thirteenth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.bull, 'thirteenth')]" [imagesDown]="[getImageWithClickHandler(images.osho, 'thirteenth')]"></app-gallery-column>
@@ -156,7 +156,7 @@
 
     <ng-container #fourteenth *ngFor="let image of imagesGroup.fourteenth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.demon, 'fourteenth')]" [imagesDown]="[getImageWithClickHandler(images.goat.changeSize('a6'), 'fourteenth')]"></app-gallery-column>
@@ -174,7 +174,7 @@
     
     <ng-container #fifteenth *ngFor="let image of imagesGroup.fifteenth">
 
-        <app-gallery-modal-img [image]="image" size="a1"></app-gallery-modal-img>
+        <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
     <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.pact.changeSize('a1').changeSizeTablet('a1'), 'fifteenth')]" [imagesDown]="[getImageWithClickHandler(images.camera, 'fifteenth'), getImageWithClickHandler(images.condor, 'fifteenth')]" ></app-gallery-column>
