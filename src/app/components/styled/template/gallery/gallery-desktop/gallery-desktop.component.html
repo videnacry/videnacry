@@ -86,7 +86,7 @@
         <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
-    <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.turkey, 'eighth'), getImageWithClickHandler(images.luciana, 'eighth')]" [imagesDown]="[getImageWithClickHandler(images.lovers, 'eighth')]"></app-gallery-column>
+    <app-gallery-column [imagesUp]="[getImageWithClickHandler(images.turkey, 'eighth'), getImageWithClickHandler(images.luciana, 'eighth')]" [imagesDown]="[getImageWithClickHandler(images.lovers.changeSize('a3'), 'eighth')]"></app-gallery-column>
     
 
     

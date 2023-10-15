@@ -17,6 +17,6 @@ export class GalleryColumnImgTemplateComponent {
   @Input() bgImg:string = ''
   @Input() title:string = ''
 
-  @Input() image:GalleryImage = new GalleryImage({})
+  @Input() image?:GalleryImage
   @Input() screenChangeDirection:boolean = true
 }

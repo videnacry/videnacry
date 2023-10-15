@@ -18,6 +18,7 @@ import { ImgLittleGalleryComponent } from './components/styled/organism/gallery-
 import { GalleryDesktopComponent } from './components/styled/template/gallery/gallery-desktop/gallery-desktop.component';
 import { GalleryPhoneComponent } from './components/styled/template/gallery/gallery-phone/gallery-phone.component';
 import { GalleryTabletComponent } from './components/styled/template/gallery/gallery-tablet/gallery-tablet.component';
+import { ShapeSizeComponent } from './components/styled/atom/shape-size/shape-size.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { GalleryTabletComponent } from './components/styled/template/gallery/gal
     GalleryDesktopComponent,
     GalleryTabletComponent,
     GalleryPhoneComponent,
+    ShapeSizeComponent,
   ],
   imports: [
     BrowserModule,

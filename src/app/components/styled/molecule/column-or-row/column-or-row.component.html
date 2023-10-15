@@ -1,4 +1,4 @@
-<app-panel-colored [color]="color">
+<app-panel-colored [color]="color" [bgImg]="bgImg">
     <div [class.is-column]="isColumn" [class.is-row]="!isColumn">
         <app-standard-size *ngIf="upStyle.shouldStyle else up_sized" [size]="upStyle.size" [sizeTablet]="upStyle.sizeTablet" [orientation]="upStyle.orientation">
             <ng-container *ngTemplateOutlet="upStyle.template ? upStyle.template : null"></ng-container>

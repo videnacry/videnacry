@@ -9,4 +9,4 @@
         </app-panel-colored>
     </app-standard-size>
 </app-panel-colored>
-<app-gallery-image [image]="image"></app-gallery-image>
+<app-gallery-image *ngIf="image" [image]="image"></app-gallery-image>

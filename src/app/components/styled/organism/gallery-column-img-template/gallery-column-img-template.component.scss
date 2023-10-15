@@ -1,6 +1,7 @@
 :host {
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
 }
 :host.up-img {
     flex-direction: column-reverse;

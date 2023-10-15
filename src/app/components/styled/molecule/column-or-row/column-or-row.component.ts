@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { color } from '../../../../types'
 import { ColumnOrRowProjection } from './class';
+import { GalleryImage } from '../gallery-image/class';
 
 
 @Component({
@@ -17,6 +18,6 @@ export class ColumnOrRowComponent{
   @Input() downStyle:ColumnOrRowProjection = new ColumnOrRowProjection({})
 
   @Input() color:color = 'primary'
-  
+  @Input() bgImg:string = ''
 
 }

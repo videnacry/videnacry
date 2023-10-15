@@ -7,7 +7,7 @@
     <app-gallery-image [image]="images.mage"></app-gallery-image>
         
     <app-column-or-row>
-        <app-gallery-column first [imagesDown]="[images.goat.changeSizeOrientation('vertical'), images.lion.changeSizeTablet('a4').changeSize('a5')]" ></app-gallery-column>
+        <app-gallery-column first [imagesDown]="[images.goat.changeSizeOrientation('vertical'), images.lion.changeSizeOrientation('vertical')]" ></app-gallery-column>
         <app-gallery-column second [imagesDown]="[images.turkey, images.bull]" [imagesUp]="[images.deity.changeSize('a3')]"></app-gallery-column>
     </app-column-or-row> 
     <app-gallery-column [imagesUp]="[images.pirates.changeSize('a4')]" [imagesDown]="[images.christian.changeSize('a4')]"></app-gallery-column>
@@ -28,14 +28,27 @@
     <app-gallery-image [image]="images.osho"></app-gallery-image>
 
     <app-gallery-image [image]="images.role"></app-gallery-image>
-    <app-column-or-row color="dark"  [upStyle]="getUpTemplate(musicUpProjection)" [downStyle]="getDownTemplate(musicDownProjection)">
+    <!-- <app-column-or-row color="dark"  [upStyle]="getUpTemplate(musicUpProjection)" [downStyle]="getDownTemplate(musicDownProjection)">
     </app-column-or-row>
     <ng-template #musicUpProjection>
         <iframe  up-projection   src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </ng-template>
     <ng-template #musicDownProjection>
         <iframe  down-projection   src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </ng-template>
+    </ng-template> -->
+
+    <app-shape-size>
+        <app-gallery-column shape [imagesUp]="[images.luciana]" [imagesDown]="[images.panther]"></app-gallery-column>
+        <app-panel-colored color="dark">
+            <app-standard-size size="a5">
+                <app-column-or-row>
+                    <iframe first  src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe second  src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </app-column-or-row>
+            </app-standard-size>
+        </app-panel-colored>
+    </app-shape-size>
+
 
     <app-gallery-article sizeTablet="a-max"  size="a-max" padding="md" color="success" title="Vision" [lines]='["I like to think in small details like tiny little beings full of live, civilizations which are hard to see in comparison to our own size, like watching with a microscope to reveal the microcosms!",
     "I want to get better with the small and big shapes in my drawings!",
@@ -47,12 +60,33 @@
     <app-gallery-image [image]="images.hodgepodge.changeSize('a-max')"></app-gallery-image>
 
     <app-gallery-image [image]="images.camera"></app-gallery-image>
-    <app-column-or-row color="dark" size="a1">
-        <ng-container first>
-            <label class="filter" for="hue-rotate"><p>hue-rotate</p></label><input class="filter" type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
+    
+    <app-shape-size>
+        <app-gallery-image shape [image]="images.christian"></app-gallery-image>
+        <ng-container>
+
+            <app-column-or-row color="dark">
+
+                <app-column-or-row first [bgImg]="images.pirates.path">
+                    <ng-container first>
+                        <label class="filter" for="hue-rotate"><p>hue-rotate</p></label>
+                    </ng-container>
+                    <ng-container second>
+                        <input class="filter" type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
+                    </ng-container>
+                </app-column-or-row>
+                
+                <app-column-or-row second [bgImg]="images.turkey.path">
+                    <ng-container first>
+                        <label class="filter" for="color-invert"><p>color-invert</p></label>
+                    </ng-container>
+                    <ng-container second>
+                        <input class="filter" type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
+                    </ng-container>
+                </app-column-or-row>
+
+            </app-column-or-row>
+
         </ng-container>
-        <ng-container second>
-            <label class="filter" for="color-invert"><p>color-invert</p></label><input class="filter" type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
-        </ng-container>
-    </app-column-or-row>
+    </app-shape-size>
     <app-gallery-image [image]="images.snake"></app-gallery-image>
