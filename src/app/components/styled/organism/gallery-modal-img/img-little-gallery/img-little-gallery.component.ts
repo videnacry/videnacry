@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { GalleryImage } from '../../../molecule/gallery-image/class';
 
 @Component({
@@ -9,4 +9,8 @@ import { GalleryImage } from '../../../molecule/gallery-image/class';
 export class ImgLittleGalleryComponent {
 
   @Input() image:GalleryImage = new GalleryImage({})
+
+  @HostBinding('class.vertical-img') get isImageVertical ():boolean {
+    return this.image.orientation == 'vertical'
+  }
 }

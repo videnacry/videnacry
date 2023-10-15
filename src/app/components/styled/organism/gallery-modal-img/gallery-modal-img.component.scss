@@ -44,10 +44,15 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
     overflow: hidden;
 }
 
+
+
 .container_gallery-modal-img {
     position: relative;
     width: 100%;
-    aspect-ratio: 1/1.6;
+}
+
+.height-size {
+    padding-top: 160%;
 }
 
 .gallery-modal-img-c {
@@ -65,7 +70,7 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
         font-size: 1.1em;
     }
     >.header {
-        margin: 1vmin;
+        margin: .6vmin;
         color: $base-font-color;
         @include row-spaced;
         >.name {
@@ -92,25 +97,29 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
         @include column-spaced;
         @include box-dark();
         >.little-gallery {
+            overflow: hidden;
+            height: 70%;
             >.title {
                 margin: unset;
                 text-align: center;
             }
-            overflow: hidden;
-            height: 67%;
+            >.img-little-gallery {
+                margin-top: 10px;
+                height: calc(100% - 1.1em - 10px);
+            }
         }
         >.description {
             overflow-y: auto;
             overflow-x: hidden;
-            height: 32%;
+            height: 28%;
             margin: unset;
             text-align: justify;
         }
     }    
     >.footer {
         @include row-spaced;
-        margin: 1vmin;
-        margin-top: .8vmin;
+        margin: .4vmin 1vmin;
+        margin-top: .2vmin;
         color: $base-font-color;
         >.option {
             margin: unset;

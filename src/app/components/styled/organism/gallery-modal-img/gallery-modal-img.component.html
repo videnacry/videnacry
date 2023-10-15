@@ -2,6 +2,7 @@
 <app-panel-colored [color]="color">
     <app-standard-size [size]="size">
         <div class="container_gallery-modal-img">
+            <div class="height-size"></div>
             <div class="gallery-modal-img-c">
                 <div class="header">
                     <p class="name">Artwork details</p>
@@ -12,7 +13,9 @@
                 <div class="details">
                     <div class="little-gallery">
                         <h3 class="title">{{image.title}}</h3>
-                        <app-img-little-gallery [image]="image"></app-img-little-gallery>
+                        <div class="img-little-gallery">
+                            <app-img-little-gallery [image]="image"></app-img-little-gallery>
+                        </div>
                     </div>
                     <ng-container *ngIf="image.lines.length > 1 then lines else line"></ng-container>
                 </div>
