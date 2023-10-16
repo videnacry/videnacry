@@ -1,92 +1,181 @@
-<app-gallery-column [imagesUp]="[images.portrait]" [imagesDown]="[images.ivelina]"></app-gallery-column>
-    <app-gallery-image [image]="images.awareness"></app-gallery-image>
-    
-    <app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="secondary" title="Intro" [lines]='["Bien aventurado sea por detenerme a observarme, en el infinito que todo y nada existe vamos a a detener nuestro yo para participar del nosotros y a agradeciendo a la división podremos señalar al infinito y reduciro a vagas palabras para mostrar algo con esta obra a mis ahora otros yo."]'></app-gallery-article>
-    
-    <app-gallery-column [imagesUp]="[images.demon.changeSize('a5')]" [imagesDown]="[images.jellyfish]"></app-gallery-column>
-    <app-gallery-image [image]="images.mage"></app-gallery-image>
+
+
+
+
+
+<ng-container #first *ngFor="let image of imagesGroup.first">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
-    <app-column-or-row>
-        <app-gallery-column first [imagesDown]="[images.goat.changeSizeOrientation('vertical'), images.lion.changeSizeOrientation('vertical')]" ></app-gallery-column>
-        <app-gallery-column second [imagesDown]="[images.turkey, images.bull]" [imagesUp]="[images.deity.changeSize('a3')]"></app-gallery-column>
-    </app-column-or-row> 
-    <app-gallery-column [imagesUp]="[images.pirates.changeSize('a4')]" [imagesDown]="[images.christian.changeSize('a4')]"></app-gallery-column>
+</ng-container>
+<app-gallery-column [imagesUp]="[getImageWithClickHandler(images.portrait, 'first')]" [imagesDown]="[getImageWithClickHandler(images.ivelina, 'first')]"></app-gallery-column>
+<app-gallery-image [image]="getImageWithClickHandler(images.awareness, 'first')"></app-gallery-image>
     
-    <app-gallery-card [image]="images.biography" size="a-max" sizeTablet="a-max" color="primary" orientation="horizontal" title="Biography" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-card>
-    
-    <app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="light" title="Reflexión" [lines]="['Puede convivir el miedo y la adoración...',
-    'Miedo a los insectos, los animales, la “mala hierba”..., pero respeto hacia su vida... buscar su bienestar...',
-    'Se dice que no existen en otros planetas, trabajan por el ecosistema..., y son tristemente masacrados sin piedad, por seres “inteligentes”...']"></app-gallery-article>
-    
-    <app-gallery-image [image]="images.jungle.changeSizeTablet('a3').changeSize('a3')"></app-gallery-image>
-    <app-gallery-column [imagesUp]="[images.liondragon.changeSizeTablet('a3').changeSize('a3').changeSizeOrientation('vertical')]" [imagesDown]="[images.pact.changeSizeTablet('a3').changeSize('a3').changeSizeOrientation('vertical')]"></app-gallery-column>
-    
-    <app-gallery-image [image]="images.lovers.changeSizeTablet('a0').changeSizeOrientation('vertical').changeSize('a0')"></app-gallery-image>
-    
-    <app-gallery-image [image]="images.panther"></app-gallery-image>
-    <app-gallery-image [image]="images.luciana"></app-gallery-image>
-    <app-gallery-image [image]="images.osho"></app-gallery-image>
+<app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="secondary" title="Intro" [lines]='["Bien aventurado sea por detenerme a observarme, en el infinito que todo y nada existe vamos a a detener nuestro yo para participar del nosotros y a agradeciendo a la división podremos señalar al infinito y reduciro a vagas palabras para mostrar algo con esta obra a mis ahora otros yo."]'></app-gallery-article>
 
-    <app-gallery-image [image]="images.role"></app-gallery-image>
-    <!-- <app-column-or-row color="dark"  [upStyle]="getUpTemplate(musicUpProjection)" [downStyle]="getDownTemplate(musicDownProjection)">
-    </app-column-or-row>
-    <ng-template #musicUpProjection>
-        <iframe  up-projection   src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </ng-template>
-    <ng-template #musicDownProjection>
-        <iframe  down-projection   src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </ng-template> -->
 
+
+
+
+<ng-container #second *ngFor="let image of imagesGroup.second">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-column [imagesUp]="[getImageWithClickHandler(images.demon.changeSize('a5'), 'second')]" [imagesDown]="[getImageWithClickHandler(images.jellyfish, 'second')]"></app-gallery-column>
+<app-gallery-image [image]="getImageWithClickHandler(images.mage, 'second')"></app-gallery-image>
+
+
+
+
+
+<ng-container #third *ngFor="let image of imagesGroup.third">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container> 
+<app-column-or-row>
+    <app-gallery-column first [imagesDown]="[getImageWithClickHandler(images.goat.changeSizeOrientation('vertical'), 'third'), getImageWithClickHandler(images.lion.changeSizeOrientation('vertical'), 'third')]" ></app-gallery-column>
+    <app-gallery-column second [imagesDown]="[getImageWithClickHandler(images.turkey, 'eleventh'), getImageWithClickHandler(images.bull, 'eleventh')]" [imagesUp]="[getImageWithClickHandler(images.deity.changeSize('a3'), 'third')]"></app-gallery-column>
+</app-column-or-row> 
+<app-gallery-column [imagesUp]="[getImageWithClickHandler(images.pirates.changeSize('a4'), 'third')]" [imagesDown]="[getImageWithClickHandler(images.christian.changeSize('a4'), 'eleventh')]"></app-gallery-column>
+<ng-container #nineth *ngFor="let image of imagesGroup.eleventh">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>    
+
+<app-gallery-card [image]="images.biography" size="a-max" sizeTablet="a-max" color="primary" orientation="horizontal" title="Biography" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-card>
+    
+<app-gallery-article sizeTablet="a-max" size="a-max" padding="md" color="light" title="Reflexión" [lines]="['Puede convivir el miedo y la adoración...',
+'Miedo a los insectos, los animales, la “mala hierba”..., pero respeto hacia su vida... buscar su bienestar...',
+'Se dice que no existen en otros planetas, trabajan por el ecosistema..., y son tristemente masacrados sin piedad, por seres “inteligentes”...']"></app-gallery-article>
+
+
+
+
+
+<ng-container #fourth *ngFor="let image of imagesGroup.fourth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-image [image]="getImageWithClickHandler(images.jungle.changeSize('a3'), 'fourth')"></app-gallery-image>
+<app-gallery-column [imagesUp]="[getImageWithClickHandler(images.liondragon.changeSize('a4'), 'fourth')]" [imagesDown]="[getImageWithClickHandler(images.pact.changeSize('a4'), 'fourth')]"></app-gallery-column>
+
+
+
+
+
+<ng-container #fifth *ngFor="let image of imagesGroup.fifth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-image [image]="getImageWithClickHandler(images.lovers.changeSize('a0'), 'fifth')"></app-gallery-image>
+
+
+
+
+
+<ng-container #sixth *ngFor="let image of imagesGroup.sixth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>    
+<app-gallery-image [image]="getImageWithClickHandler(images.panther, 'sixth')"></app-gallery-image>
+<app-gallery-image [image]="getImageWithClickHandler(images.luciana, 'sixth')"></app-gallery-image>
+<app-gallery-image [image]="getImageWithClickHandler(images.osho, 'sixth')"></app-gallery-image>
+
+
+
+
+<ng-container #seventh *ngFor="let image of imagesGroup.seventh">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-image [image]="getImageWithClickHandler(images.role, 'seventh')"></app-gallery-image>
+<app-shape-size>
+    <app-gallery-column shape [imagesUp]="[images.luciana]" [imagesDown]="[images.panther]"></app-gallery-column>
+    <app-panel-colored color="dark">
+        <app-standard-size size="a5">
+            <app-column-or-row>
+                <iframe first  src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe second  src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </app-column-or-row>
+        </app-standard-size>
+    </app-panel-colored>
+</app-shape-size>
+
+<app-gallery-article sizeTablet="a-max"  size="a-max" padding="md" color="success" title="Vision" [lines]='["I like to think in small details like tiny little beings full of live, civilizations which are hard to see in comparison to our own size, like watching with a microscope to reveal the microcosms!",
+"I want to get better with the small and big shapes in my drawings!",
+"I hope to make more spiritual like pictures."]'></app-gallery-article>
+
+
+
+
+
+
+
+<ng-container #eighth *ngFor="let image of imagesGroup.eighth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-image [image]="getImageWithClickHandler(images.condor.changeSize('a4'), 'eighth')"></app-gallery-image>
+<app-gallery-image [image]="getImageWithClickHandler(images.raulitos.changeSize('a3'), 'eighth')"></app-gallery-image>
+
+
+
+
+
+<ng-container #nineth *ngFor="let image of imagesGroup.nineth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>   
+<app-gallery-image [image]="getImageWithClickHandler(images.hodgepodge.changeSize('a-max'), 'nineth')"></app-gallery-image>
+
+
+
+
+<ng-container #tenth *ngFor="let image of imagesGroup.tenth">
+
+    <app-gallery-modal-img [image]="image" size="a-max" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
+        
+</ng-container>
+<app-gallery-image [image]="getImageWithClickHandler(images.camera, 'tenth')"></app-gallery-image>
     <app-shape-size>
-        <app-gallery-column shape [imagesUp]="[images.luciana]" [imagesDown]="[images.panther]"></app-gallery-column>
-        <app-panel-colored color="dark">
-            <app-standard-size size="a5">
-                <app-column-or-row>
-                    <iframe first  src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    <iframe second  src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </app-column-or-row>
-            </app-standard-size>
-        </app-panel-colored>
-    </app-shape-size>
+    <app-gallery-image shape [image]="images.christian"></app-gallery-image>
+    <ng-container>
 
+        <app-column-or-row color="dark">
 
-    <app-gallery-article sizeTablet="a-max"  size="a-max" padding="md" color="success" title="Vision" [lines]='["I like to think in small details like tiny little beings full of live, civilizations which are hard to see in comparison to our own size, like watching with a microscope to reveal the microcosms!",
-    "I want to get better with the small and big shapes in my drawings!",
-    "I hope to make more spiritual like pictures."]'></app-gallery-article>
-    
-    <app-gallery-image [image]="images.condor.changeSize('a4')"></app-gallery-image>
-    <app-gallery-image [image]="images.raulitos.changeSizeOrientation('horizontal').changeSize('a3').changeSizeTablet('a0')"></app-gallery-image>
-    
-    <app-gallery-image [image]="images.hodgepodge.changeSize('a-max')"></app-gallery-image>
-
-    <app-gallery-image [image]="images.camera"></app-gallery-image>
-    
-    <app-shape-size>
-        <app-gallery-image shape [image]="images.christian"></app-gallery-image>
-        <ng-container>
-
-            <app-column-or-row color="dark">
-
-                <app-column-or-row first [bgImg]="images.pirates.path">
-                    <ng-container first>
-                        <label class="filter" for="hue-rotate"><p>hue-rotate</p></label>
-                    </ng-container>
-                    <ng-container second>
-                        <input class="filter" type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
-                    </ng-container>
-                </app-column-or-row>
-                
-                <app-column-or-row second [bgImg]="images.turkey.path">
-                    <ng-container first>
-                        <label class="filter" for="color-invert"><p>color-invert</p></label>
-                    </ng-container>
-                    <ng-container second>
-                        <input class="filter" type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
-                    </ng-container>
-                </app-column-or-row>
-
+            <app-column-or-row first [bgImg]="images.pirates.path">
+                <ng-container first>
+                    <label class="filter" for="hue-rotate"><p>hue-rotate</p></label>
+                </ng-container>
+                <ng-container second>
+                    <input class="filter" type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
+                </ng-container>
+            </app-column-or-row>
+            
+            <app-column-or-row second [bgImg]="images.turkey.path">
+                <ng-container first>
+                    <label class="filter" for="color-invert"><p>color-invert</p></label>
+                </ng-container>
+                <ng-container second>
+                    <input class="filter" type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
+                </ng-container>
             </app-column-or-row>
 
-        </ng-container>
-    </app-shape-size>
-    <app-gallery-image [image]="images.snake"></app-gallery-image>
+        </app-column-or-row>
+
+    </ng-container>
+</app-shape-size>
+<app-gallery-image [image]="getImageWithClickHandler(images.snake, 'tenth')"></app-gallery-image>
+
+
+
+
