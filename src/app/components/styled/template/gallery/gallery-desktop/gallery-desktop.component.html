@@ -2,7 +2,6 @@
 
 
 
-
     <ng-container #first *ngFor="let image of imagesGroup.first">
 
         <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
@@ -43,7 +42,7 @@
         <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
-    <app-gallery-column-card-img [images]="[getImageWithClickHandler(images.hodgepodge, 'fourth')]" [image]="images.biography" [sizeTablet]="images.hodgepodge.sizeTablet" [size]="images.hodgepodge.size" color="primary" [orientation]="images.hodgepodge.orientation" title="Biography" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-column-card-img>
+    <app-gallery-column-card-img [images]="[getImageWithClickHandler(images.hodgepodge, 'fourth')]" [image]="images.biography" [sizeTablet]="images.hodgepodge.sizeTablet" [size]="images.hodgepodge.size" color="primary" [orientation]="images.hodgepodge.orientation" [lines]="['name: Berón Gamboa Gavilanes', 'birth: June 01, 1998 - Quito, Ecuador']" ></app-gallery-column-card-img>
     
 
 
@@ -73,10 +72,18 @@
         <app-gallery-modal-img [image]="image" size="a1" [isLimitedToOneModal]="isLimitedToOneModal" [handler_toggle]="handler_toggleModalNumberLimitation"></app-gallery-modal-img>
         
     </ng-container>
-    <app-gallery-column-img-template [image]="getImageWithClickHandler(images.lion, 'seventh')" sizeTablet="a1" size="a5" color="dark" [orientation]="images.lion.orientation"  title="music!">
-        <iframe top  src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        <iframe bottom  src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    </app-gallery-column-img-template>
+    <app-column-or-row>
+        <app-gallery-image first [image]="getImageWithClickHandler(images.lion, 'seventh')" ></app-gallery-image>
+        <app-shape-size second>
+            <app-gallery-image shape [image]="images.jungle"></app-gallery-image>
+            <app-standard-size size="a4">
+                <app-column-or-row title="Music" [isChildGrow]="false">
+                    <iframe first  src="https://www.youtube.com/embed/2RaoCBNHmfw?si=sakvHTiyz_cOhVE7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe second  src="https://www.youtube.com/embed/FU_yNE2MMOU?si=sdrStD9AGqJPz2Qg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </app-column-or-row>
+            </app-standard-size>
+        </app-shape-size>
+    </app-column-or-row>
     
 
     
@@ -98,10 +105,10 @@
     </ng-container>   
     <app-gallery-column-img-template [screenChangeDirection]="false" [image]="getImageWithClickHandler(images.deity.changeSize('a5'), 'nineth')" [sizeTablet]="images.deity.sizeTablet" [size]="images.deity.size" color="dark" [orientation]="images.deity.orientation" title="play with the colors!">
     <div top>
-        <label for="hue-rotate"><p>hue-rotate :</p></label><input type="range" name="hue-rotate" id="hue-rotate" min="0" max="360">
+        <label for="hue-rotate"><p>hue-rotate :</p></label><input type="range" name="hue-rotate" id="hue-rotate" min="0" max="360" (input)="changeHueRotate($event)">
     </div>
     <div bottom>
-        <label for="color-invert"><p>color-invert :</p></label><input type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1">
+        <label for="color-invert"><p>color-invert :</p></label><input type="range" name="color-invert" id="color-invert" min="0" max="1" step="0.1" (input)="changeColorInvert($event)">
     </div>
     </app-gallery-column-img-template>
     

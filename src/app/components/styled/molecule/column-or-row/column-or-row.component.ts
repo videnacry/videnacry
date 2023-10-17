@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, HostBinding } from '@angular/core';
 import { color } from '../../../../types'
 import { ColumnOrRowProjection } from './class';
 import { GalleryImage } from '../gallery-image/class';
@@ -19,5 +19,6 @@ export class ColumnOrRowComponent{
 
   @Input() color:color = 'primary'
   @Input() bgImg:string = ''
+  @Input() isChildGrow:boolean = true;
 
 }

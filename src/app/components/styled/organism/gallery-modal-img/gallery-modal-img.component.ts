@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { GalleryImage } from '../../molecule/gallery-image/class';
 import { size } from '../../atom/standard-size/type';
 import { color } from 'src/app/types';
@@ -19,8 +19,11 @@ export class GalleryModalImgComponent {
   @Input() isLimitedToOneModal = false;
 
   @Input() handler_toggle:Function = () => {}
-
+  @HostBinding('class.horizontal-img') get isImageVertical ():boolean {
+    return this.image.orientation == 'horizontal'
+  }
   
+
   handler_close(image:GalleryImage) {
     image.handlerClick();
   }

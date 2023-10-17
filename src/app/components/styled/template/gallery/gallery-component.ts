@@ -7,6 +7,18 @@ import { GalleryImage } from "../../molecule/gallery-image/class";
 
 export class GalleryComponent {
 
+
+
+  changeHueRotate (e:any) {
+    document.body.style.filter = `hue-rotate(${e.currentTarget?.value}deg)`
+  }
+
+  changeColorInvert (e:any) {
+    document.getElementsByTagName('html')[0].style.filter = `invert(${e.currentTarget?.value})`
+  }
+
+
+
     
   images:GalleryImages = GalleryImages.instance
 

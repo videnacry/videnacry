@@ -156,7 +156,7 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
         width: 100%;
     }
     .height-size {
-        padding-top: 50%;
+        padding-top: 60%;
     }
     .gallery-modal-img-c {
         @include box-light;
@@ -182,9 +182,9 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
                     display: none;
                 }
                 >.img-little-gallery {
-                    height: 90%;
-                    width: 90%;
-                    margin: 5%;
+                    height: 94%;
+                    width: 94%;
+                    margin: 3%;
                 }
             }
             >.description {
@@ -199,5 +199,10 @@ $base-bg-img-lighter: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%,
             margin-left: 55%;
             width: 44%;
         }
+    }
+
+    :host.horizontal-img .gallery-modal-img-c>.details>.little-gallery>.img-little-gallery {
+        height: 86%;
+        margin-top: 8%;
     }
 }

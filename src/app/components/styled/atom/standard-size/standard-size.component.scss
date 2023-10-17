@@ -2,6 +2,7 @@
     max-height: calc(100% - 8vmin);
     display: flex;
     align-items: center;
+    margin: auto;
 }
 :host.padding {
     padding: calc(3vmax / 1.5);
@@ -124,55 +125,54 @@
 
 
 @media screen and (min-width:1200px) {
-// @media screen and (min-width:700px) {
         
     :host.a0.horizontal {
-        max-width: calc((1420px * 100vw) / 2800px);
-        width: calc((1420px * 100vw) / 3200px);
+        max-width: calc((1420px * 100vw) / 3000px);
+        width: calc((1420px * 100vw) / 3300px);
     }
     :host.a0.vertical {
-        max-width: calc((900px * 100vw) / 2800px);
-        width: calc((900px * 100vw) / 3200px);
+        max-width: calc((900px * 100vw) / 3000px);
+        width: calc((900px * 100vw) / 3300px);
     }
     :host.a1.horizontal {
-        max-width: calc((948px * 100vw) / 2800px);
-        width: calc((948px * 100vw) / 3200px);
+        max-width: calc((948px * 100vw) / 3000px);
+        width: calc((948px * 100vw) / 3300px);
     }
     :host.a1.vertical {
-        max-width: calc((680px * 100vw) / 2800px);
-        width: calc((680px * 100vw) / 3200px);
+        max-width: calc((680px * 100vw) / 3000px);
+        width: calc((680px * 100vw) / 3300px);
     }
     :host.a4.horizontal {
-        max-width: calc((562px * 100vw) / 2800px);
-        width: calc((562px * 100vw) / 3200px);
+        max-width: calc((562px * 100vw) / 3000px);
+        width: calc((562px * 100vw) / 3300px);
     }
     :host.a4.vertical {
-        max-width: calc((400px * 100vw) / 2800px);
-        width: calc((400px * 100vw) / 3200px);
+        max-width: calc((400px * 100vw) / 3000px);
+        width: calc((400px * 100vw) / 3300px);
     }
     :host.a3.horizontal {
-        max-width: calc((700px * 100vw) / 2800px);
-        width: calc((700px * 100vw) / 3200px);
+        max-width: calc((700px * 100vw) / 3000px);
+        width: calc((700px * 100vw) / 3300px);
     }
     :host.a3.vertical {
-        max-width: calc((500px * 100vw) / 2800px);
-        width: calc((500px * 100vw) / 3200px);
+        max-width: calc((500px * 100vw) / 3000px);
+        width: calc((500px * 100vw) / 3300px);
     }
     :host.a5.horizontal {
-        max-width: calc((440px * 100vw) / 2800px);
-        width: calc((440px * 100vw) / 3200px);
+        max-width: calc((440px * 100vw) / 3000px);
+        width: calc((440px * 100vw) / 3300px);
     }
     :host.a5.vertical {
-        max-width: calc((300px * 100vw) / 2800px);
-        width: calc((300px * 100vw) / 3200px);
+        max-width: calc((300px * 100vw) / 3000px);
+        width: calc((300px * 100vw) / 3300px);
     }
     :host.a6.horizontal {
-        max-width: calc((380px * 100vw) / 2800px);
-        width: calc((380px * 100vw) / 3200px);
+        max-width: calc((380px * 100vw) / 3000px);
+        width: calc((380px * 100vw) / 3300px);
     }
     :host.a6.vertical {
-        max-width: calc((245px * 100vw) / 2800px);
-        width: calc((245px * 100vw) / 3200px);
+        max-width: calc((245px * 100vw) / 3000px);
+        width: calc((245px * 100vw) / 3300px);
     }
 }
 

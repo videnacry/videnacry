@@ -1,5 +1,7 @@
 <app-panel-colored [color]="color" [bgImg]="bgImg">
-    <div [class.is-column]="isColumn" [class.is-row]="!isColumn">
+    <h1 *ngIf="title && !isColumn">{{title}}</h1>
+    <div [class.is-column]="isColumn" [class.is-row]="!isColumn" [class.child-grow]="isChildGrow">
+        <h1 *ngIf="title && isColumn">{{title}}</h1>
         <app-standard-size *ngIf="upStyle.shouldStyle else up_sized" [size]="upStyle.size" [sizeTablet]="upStyle.sizeTablet" [orientation]="upStyle.orientation">
             <ng-container *ngTemplateOutlet="upStyle.template ? upStyle.template : null"></ng-container>
         </app-standard-size>

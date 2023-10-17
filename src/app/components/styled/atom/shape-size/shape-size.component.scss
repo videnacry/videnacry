@@ -3,7 +3,8 @@
 }
 .shape-size-shape {
     position:relative;
-    z-index:-1;
+    visibility: hidden;
+    z-index:-2;
 }
 .shape-size-content {
     position: absolute;
