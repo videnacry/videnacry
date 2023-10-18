@@ -19,6 +19,7 @@ import { GalleryDesktopComponent } from './components/styled/template/gallery/ga
 import { GalleryPhoneComponent } from './components/styled/template/gallery/gallery-phone/gallery-phone.component';
 import { GalleryTabletComponent } from './components/styled/template/gallery/gallery-tablet/gallery-tablet.component';
 import { ShapeSizeComponent } from './components/styled/atom/shape-size/shape-size.component';
+import { BorderAnimatedComponent } from './components/styled/atom/border-animated/border-animated.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ShapeSizeComponent } from './components/styled/atom/shape-size/shape-si
     GalleryTabletComponent,
     GalleryPhoneComponent,
     ShapeSizeComponent,
+    BorderAnimatedComponent,
   ],
   imports: [
     BrowserModule,
