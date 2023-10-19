@@ -6,15 +6,15 @@
             <div class="gallery-modal-img-c">
                 <div class="header">
                     <p class="name">Artwork details</p>
-                    <button class="close" (click)="handler_close(image)">
+                    <button class="close" [class.is-manual]="isManual" (click)="handler_close(image)">
                         <div class="img"></div>
                     </button>
                 </div>
-                <div class="details">
+                <div class="details" [class.is-manual]="isManual" [class.no-title]="!image.title">
                     <div class="little-gallery">
                         <h3 class="title">{{image.title}}</h3>
                         <div class="img-little-gallery">
-                            <app-img-little-gallery [image]="image"></app-img-little-gallery>
+                            <app-img-little-gallery [image]="image" [isManual]="isManual"></app-img-little-gallery>
                         </div>
                     </div>
                     <div class="description">
@@ -24,7 +24,7 @@
                 </div>
                 <div class="footer">
                     <label for="limit-modals"  class="option">Have just one opened</label>
-                    <input id="limit-modals" class="option-check" type="checkbox" [checked]="isLimitedToOneModal" (change)="handler_toggle(image)">
+                    <input id="limit-modals" class="option-check" [class.is-manual]="isManual" type="checkbox" [checked]="isLimitedToOneModal" (change)="handler_toggle(image)">
                 </div>
             </div>
         </div>
@@ -38,5 +38,5 @@
     <p *ngFor="let line of image.lines">{{line}}</p>
 </ng-template>
 <ng-template #line>
-    <p >{{image.lines[0]}}</p>
+    <p >{{image.lines[0]? image.lines : 'There isn\' a description yet.'}}</p>
 </ng-template>

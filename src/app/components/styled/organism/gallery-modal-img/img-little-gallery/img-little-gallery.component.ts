@@ -10,7 +10,12 @@ export class ImgLittleGalleryComponent {
 
   @Input() image:GalleryImage = new GalleryImage({})
 
+  @Input() isManual:boolean = false;
+
   @HostBinding('class.vertical-img') get isImageVertical ():boolean {
     return this.image.orientation == 'vertical'
+  }
+  @HostBinding('class.horizontal-img') get isImageHorizontal ():boolean {
+    return this.image.orientation == 'horizontal'
   }
 }

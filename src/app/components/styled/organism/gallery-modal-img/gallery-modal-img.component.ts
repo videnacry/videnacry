@@ -14,9 +14,12 @@ export class GalleryModalImgComponent {
   @Input() image:GalleryImage = new GalleryImage({})
 
   @Input() size:size = 'a1';
+  
   @Input() color:color = 'dark';
 
   @Input() isLimitedToOneModal = false;
+
+  @Input() isManual:boolean = false;
 
   @Input() handler_toggle:Function = () => {}
   @HostBinding('class.horizontal-img') get isImageVertical ():boolean {

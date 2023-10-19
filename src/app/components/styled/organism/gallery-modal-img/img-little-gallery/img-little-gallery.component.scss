@@ -13,6 +13,18 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+@mixin encircle-btn($property) {
+    content:'';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    #{$property}: 80%;
+    aspect-ratio: 1;
+    border-radius: 100%;
+    border: .5vmin dashed cyan;
+}
+
 
 $base-bg-img: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%, rgb(30, 30, 30) 80%);
 
@@ -52,6 +64,9 @@ $base-bg-img: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%, rgb(30,
             }
         }
     }
+    &.horizontal-img>.options.is-manual {
+        @include encircle-btn(width);
+    }
     &.vertical-img {
         >.frame {
             bottom: 0;
@@ -68,6 +83,9 @@ $base-bg-img: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%, rgb(30,
                 width: unset;
                 height: 14%;
                 margin: 1.4vmin 0;
+            }
+            &.is-manual::after {
+                @include encircle-btn(height);
             }
         }
     }

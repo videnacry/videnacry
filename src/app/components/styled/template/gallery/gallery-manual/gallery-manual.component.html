@@ -1,0 +1,61 @@
+<div class="container">
+    <app-border-animated [isVertical]="false">
+        <div class="example-modal">
+            <div class="description">
+                <div>
+                    Close window
+                    <hr/>
+                    <span class="hide-on-phone">Cerrar ventana</span>
+                </div>
+                <div>
+                    Buttons to get other photos of the artwork and change size
+                    <hr/>
+                    <span class="hide-on-phone">Botones para obtener otras fotos de la obra y agrandar imagen</span>
+                </div>
+                <div>
+                    Limit windows to have just one opened
+                    <hr/>
+                    <span class="hide-on-phone">Limitar las ventanas abiertas a solo una</span>
+                </div>
+            </div>
+            <div class="example-modal_width">
+                <app-gallery-modal-img size="a0" color="none" [image]="getGalleryImage({pPath:images.jungle.path})" [isManual]="true"></app-gallery-modal-img>
+            </div>
+        </div>
+    </app-border-animated>
+</div>
+<div class="container">
+    <div class="message">
+        Click a image of the gallery below
+        <div class="title">
+            <app-border-animated [isVertical]="false">
+                Manual
+            </app-border-animated>
+        </div>
+        to watch a window like this example!
+    </div>
+    
+    <div class="example-gallery">
+        <div class="example-gallery_first-row">
+            
+            <img class="gallery-manual_img" [src]="images.condor.path" alt="example gallery image" width="30%"/>
+            <img class="gallery-manual_img" [src]="images.christian.path" alt="example gallery image" width="30%"/>
+            <img class="gallery-manual_img" [src]="images.panther.path" alt="example gallery image" width="30%"/>
+        </div>
+        <div class="example-gallery_second-row">
+            
+            <img class="gallery-manual_img-double" [src]="images.lovers.path" alt="example gallery image" width="60%"/>
+
+            <div class="gallery-manual_img-selected">
+                <div class="gallery-manual_border">
+                    <app-border-animated>
+                    </app-border-animated>
+                </div>
+                <img class="gallery-manual_img" [src]="images.jungle.path" alt="example gallery image selected" width="100%"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+

@@ -1,0 +1,136 @@
+@mixin flex-evenly ($direction:row, $wrap:no-wrap) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-evenly;
+    flex-wrap: $wrap;
+}
+@mixin flex-center ($direction:row, $wrap:no-wrap) {
+    @include flex-evenly($direction, $wrap);
+    justify-content: center;
+}
+
+:host ::ng-deep  {
+    app-panel-colored:before {
+        border:none !important;
+    }
+    app-standar-size {
+        padding: 10px;
+    }
+}
+
+:host {
+    padding: 4vh 2vw;
+    @include flex-center(row, wrap);
+
+    >.container {
+        &:nth-of-type(1) {
+            flex-grow: 1;
+            margin: 0 3vw 3vh 3vw;
+            
+            .example-modal {
+                @include flex-evenly(row);
+                >.description {
+                    @include flex-evenly(column);
+                    width: 50%;
+                    p {
+                        margin: 0;
+                    }
+                }
+                >.example-modal_width {
+                    max-width: calc((34.2vh + 21.4vw) / 2);
+                }
+            }
+        }
+        &:nth-of-type(2) {
+            width: 30%;
+            flex-grow: 1;
+
+            >.message {
+                @include flex-evenly(row, wrap);
+                margin-bottom: 40px;
+                text-align: center;
+                >.title {
+                    width: 30%;
+                }
+                >p {
+                    flex-grow: 1;
+                }
+            }
+            >.example-gallery {
+                padding: 0 10%;
+                @include flex-evenly(row, wrap);
+                .example-gallery_first-row, .example-gallery_second-row {
+                    align-items: center;
+                    flex-grow: 1;
+                    margin-bottom: 4%;
+                    @include flex-evenly(row, wrap);
+                }
+                .gallery-manual_border {
+                    position: absolute;
+                    z-index: -1;
+                    transform: translate(-50%, -50%);
+                    top: 54%;
+                    left: 56%;
+                    width: 120%;
+                    height: 110%;
+                }
+            }
+        }
+    }
+}
+.gallery-manual_img {
+    max-width: 12vw;
+    border: none;
+}
+.gallery-manual_img-double {
+    max-width: 24vw;
+    border: none;
+}
+.gallery-manual_img-selected {
+    position: relative;
+    width: 30%;
+}
+
+
+
+@media screen and (max-width:699px) {
+    :host>.container {
+        &:nth-of-type(1) .example-modal {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 2vh 0;
+            >.description {
+                width: 90%;
+                .hide-on-phone {
+                    display: none;
+                }
+            }
+            >.example-modal_width {
+                max-width: unset;
+                width: 96%;
+            }
+        }
+        
+        &:nth-of-type(2) {
+            > .message {
+                display: none;
+            }
+            > .example-gallery {
+                padding: 0 5vw;
+            }
+        }
+    }
+    .gallery-manual_img {
+        max-width: 14vw;
+    }
+    .gallery-manual_img-double {
+        max-width: 28vw;
+    }
+}
+
+@media screen and (max-width:349px) {
+    :host>.container:nth-of-type(1) .example-modal > .example-modal_width {
+        width: 105%;
+    }
+        
+}
