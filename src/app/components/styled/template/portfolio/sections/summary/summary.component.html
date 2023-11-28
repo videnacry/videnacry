@@ -1,0 +1,25 @@
+<mat-card class="portfolio-summary" (click)="stopPropagation($event)">
+      
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Berón Gamboa Gavilanes</mat-card-title>
+        <mat-card-subtitle>Full stack developer</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider />
+
+    <mat-card-content>
+        <mat-card-subtitle>Summary</mat-card-subtitle>
+        <p [style]="{textAlign:'justify'}">{{ spelledOut }}</p>
+        <mat-card-subtitle>Technology stack</mat-card-subtitle>
+
+        <mat-chip-set aria-label="technology stack" class="space-around_children">
+            <mat-chip selected defaultColor="accent" *ngFor="let tech of technologies">
+            {{tech}}
+            </mat-chip>
+        </mat-chip-set>
+        
+    </mat-card-content>
+    
+
+</mat-card>

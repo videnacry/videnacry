@@ -6,21 +6,10 @@ import { SummaryService } from '../services/summary.service';
 
 @Component({
   selector: 'portfolio-summary',
-  template: `
-    <mat-card class="portfolio-summary">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Berón Gamboa Gavilanes</mat-card-title>
-        <mat-card-subtitle>Full stack developer</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ spelledOut }}</p>
-      </mat-card-content>
-    </mat-card>
-  `,
+  templateUrl: './summary.component.html',
   styles: [`
-    .portfolio-summary { max-width: 400px; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) }
-    .hide { display: none }
+    .space-around_children::ng-deep * { justify-content: space-around }
+    .portfolio-summary { left: 50%; transform: translateX(-50%); max-width: 400px; width: 90% }
     .example-header-image {
         background-image: url("/assets/profile-circle-small.webp");
         background-size: cover;
@@ -29,7 +18,8 @@ import { SummaryService } from '../services/summary.service';
 })
 export class SummaryComponent {
 
-  get state () { return this._state }
+  technologies:string[] = []
+
   spelledOut = ''
   spellText:iSpellText = {
     chars: `
@@ -41,12 +31,20 @@ export class SummaryComponent {
   }
   constructor (private _state:SummaryService, private _applicationRef:ApplicationRef) {
     this._state.spellSubscriber(this.spellText).subscribe({
-      next: spellOut => {this.spelledOut = spellOut; this._applicationRef.tick()},
+      next: spellOut => {
+        this.spelledOut = spellOut;
+        this._applicationRef.tick()
+      },
       error: err => console.error('Observable emitted an error: ' + err),
-      complete: () => alert('completeed')
+      complete: () => {
+        this.technologies = [ 'THREE', 'C#', 'HTML', 'JS', 'ANGULAR', 'CSS', 'REACT', 'NODE', 'EXPRESS', 'TS', 'REDUX', 'ASP', 'UNITY3D', 'SQL', 'MONGO'];
+        this._applicationRef.tick()
+      }
     });
   }
 
-  @HostBinding("style") hostStyle = "position: absolute; top: 0; left: 0; width: 100%; height: 100%"
+  stopPropagation = (e:Event) => e.stopPropagation()
+
+  @HostBinding("style") hostStyle = "position: absolute; top: 0; left: 0; width: 100%; height: max-content; padding: 10vh 0"
   @HostListener("click") closeModal = () => { this._state.toggleIsActive(); this.spellText.isActive = false; this._applicationRef.tick() }
 }

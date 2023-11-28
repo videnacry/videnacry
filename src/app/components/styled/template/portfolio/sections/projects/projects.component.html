@@ -1,0 +1,37 @@
+<mat-card class="example-card" (click)="stopPropagation($event)">
+
+    <mat-card-header >
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>Berón Gamboa Gavilanes</mat-card-title>
+        <mat-card-subtitle>Fullstack developer</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider />
+
+    <mat-stepper [linear]="false" [orientation]="(stepperOrientation | async)!">
+      <mat-step  *ngFor="let project of projects" [label]="project.title">
+
+        <mat-card-content>
+            <mat-card-subtitle>Overview</mat-card-subtitle>
+            <p>{{project.desc}}</p>
+            <img mat-card-image [src]="project.img" [alt]="project.title" [style]="{width:'100%', height:'100%', marginBottom:'12px'}">
+            <mat-card-subtitle>Rol</mat-card-subtitle>
+            <p>{{project.role}}</p>
+        </mat-card-content>
+
+
+        <mat-chip-listbox aria-label="technology stack" class="space-around_children" [style]="{margin: '10px auto'}">
+          <mat-chip color="accent" *ngFor="let tech of project.techStack">
+          {{tech}}
+          </mat-chip>
+        </mat-chip-listbox>
+
+        <mat-divider />
+
+        <mat-card-footer>
+            <a mat-button [href]="project.repo" target="_blank">Github</a>
+            <a mat-button *ngIf="project.live" [href]="project.live" target="_blank">Live</a>
+        </mat-card-footer>
+      </mat-step>
+    </mat-stepper>
+  </mat-card>

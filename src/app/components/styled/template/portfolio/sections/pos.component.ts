@@ -2,39 +2,62 @@ import { Component } from '@angular/core';
 
 import { SummaryService } from './services/summary.service';
 import { ProjectsService } from './services/projects.service';
+import { SectionServiceTemplate } from './services/section.service.template';
 
 
 @Component({
   selector: 'portfolio-pos',
   template: `
-  <div [style]="{position: 'absolute', top: '0'}">
-    <div>
-        <h1>projects</h1>
-        <input id="x" type="number" [value]="projects.threePos.x" (input)="setProjectsX($event)">
-        <input id="y" type="number" [value]="projects.threePos.y" (input)="setProjectsY($event)">
-        <input id="z" type="number" [value]="projects.threePos.z" (input)="setProjectsZ($event)">
+  <div [style]="{position: 'absolute', top: '0', backgroundColor:'rgb(66 66 66 / 31%)', padding: '1vmin'}">
+    <div *ngFor="let pos of positions" >
+      <h1 [style]="{color:'#ffffff99'}">{{pos.name}}</h1>
+      <mat-form-field appearance="outline" *ngFor="let axis of pos.axes" [style]="{width:'90px'}">
+        <mat-label>{{axis.label}}</mat-label>
+        <input matInput placeholder="0" [value]="axis.value" (input)="axis.set($event)" type="number">
+        <!-- <mat-icon matSuffix>sentiment_very_satisfied</mat-icon> -->
+      </mat-form-field>
     </div>
-    <div>
-        <h1>summary</h1>
-        <input id="x" type="number" [value]="summary.threePos.x" (input)="setSummaryX($event)">
-        <input id="y" type="number" [value]="summary.threePos.y" (input)="setSummaryY($event)">
-        <input id="z" type="number" [value]="summary.threePos.z" (input)="setSummaryZ($event)">
-    </div>
-  </div>`
+  </div>
+  `,
+  styles: [`
+    .example-spacer {
+      flex: 1 1 auto;
+    }
+  `]
 })
 export class PosComponent {
-  
-  get projects () { return this._projects }
-  get summary () { return this._summary }
 
-  constructor (private _summary:SummaryService, private _projects:ProjectsService) { }
+  positions
 
-  setProjectsX = ($event:any):void  => { this.projects.updateThreePos({ x: $event.target.value }) }
-  setProjectsY = ($event:any):void  => { this.projects.updateThreePos({ y: $event.target.value }) }
-  setProjectsZ = ($event:any):void  => { this.projects.updateThreePos({ z: $event.target.value }) }
-  
-  setSummaryX = ($event:any):void  => { this.summary.updateThreePos({ x: $event.target.value }) }
-  setSummaryY = ($event:any):void  => { this.summary.updateThreePos({ y: $event.target.value }) }
-  setSummaryZ = ($event:any):void  => { this.summary.updateThreePos({ z: $event.target.value }) }
+  constructor (_summaryService:SummaryService, _projectsService:ProjectsService) {
+
+    /**
+     * returns an object with each section (summary, projects...) sphere position and setter to modify it
+     */
+    const getSectionThreePos = (aName:string, aService:SectionServiceTemplate) => {
+
+      const { x, y, z } = aService.threePos
+      const setX = ({target}:any):void  => { aService.updateThreePos({ x: target.value }) }
+      const setY = ({target}:any):void  => { aService.updateThreePos({ y: target.value }) }
+      const setZ = ({target}:any):void  => { aService.updateThreePos({ z: target.value }) }
+
+      const res = {
+        name: aName,
+        axes: [
+          { value: x, set: setX, label: 'x axis' },
+          { value: y, set: setY, label: 'y axis' },
+          { value: z, set: setZ, label: 'z axis' }
+        ]
+      }
+      
+      return res
+    }
+
+    const summaryThreePos = getSectionThreePos('Summary sphere', _summaryService)
+    const projectsThreePos = getSectionThreePos('Projects sphere', _projectsService)
+
+    this.positions = [ summaryThreePos, projectsThreePos ]
+  }
+
 
 }

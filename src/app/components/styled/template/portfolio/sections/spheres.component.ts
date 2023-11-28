@@ -25,10 +25,9 @@ extend({ Mesh, SphereGeometry, MeshStandardMaterial })
   `,
 })
 export class SpheresComponent {
-  summary
+  
   readonly spheres
   constructor (summaryService:SummaryService, projectsService:ProjectsService, private _applicationRef:ApplicationRef) {
-    this.summary = summaryService
     const defaultStyles = {
       isHovered: false,
       defaultColor: Color.NAMES.crimson,

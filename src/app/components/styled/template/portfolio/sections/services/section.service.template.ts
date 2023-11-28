@@ -32,7 +32,7 @@ export class SectionServiceTemplate {
         spelledOut += aSpellText.chars[idx]
         observer.next(spelledOut);
         if (idx < (aSpellText.chars.length - 1) && aSpellText.isActive) {
-          setTimeout( recursive, 30 )
+          setTimeout( recursive, 26 )
         } else {
           observer.complete();
           

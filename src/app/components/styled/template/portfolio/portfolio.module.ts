@@ -12,6 +12,15 @@ import { PosComponent } from './sections/pos.component';
 
 
 import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatStepperModule } from '@angular/material/stepper';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 @NgModule({
@@ -28,7 +37,17 @@ import { MatCardModule } from '@angular/material/card';
     NgtCanvas,
     NgtPush,
     NgtArgs,
-    MatCardModule
+    MatToolbarModule,
+    MatCardModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatChipsModule,
+    MatStepperModule,
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   exports: [
     SpheresComponent,

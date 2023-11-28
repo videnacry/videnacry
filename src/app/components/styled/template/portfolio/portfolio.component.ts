@@ -8,7 +8,7 @@ import { ProjectsService } from './sections/services/projects.service';
 @Component({
   selector: 'app-portfolio',
   template: `
-  <ngt-canvas [sceneGraph]="SceneGraph" />
+  <ngt-canvas [sceneGraph]="SceneGraph" class="canvas"/>
   <portfolio-pos />
   <portfolio-summary *ngIf="summaryService.isActive" />
   <portfolio-projects *ngIf="projectsService.isActive"/>
