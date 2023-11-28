@@ -6,7 +6,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { extend, NgtStore, injectNgtLoader } from 'angular-three';
 import { OrbitControls } from 'three-stdlib';
 
-import { PortfolioService } from './portfolio.service';
+import { RoomService } from './sections/services/room.service';
 
 extend({ PointLight, OrbitControls })
 
@@ -16,20 +16,16 @@ extend({ PointLight, OrbitControls })
   selector: 'portfolio-scene',
   template: `
     <ngt-point-light [position]="-1" [intensity]="1"/>
-    <ngt-primitive  *args="[model$ | ngtPush]" [scale]="1" [position]="[ room.threePos.x, room.threePos.y, room.threePos.z ]" />
-    <portfolio-projects-three />
-    <portfolio-summary-three />
+    <ngt-primitive  *args="[model$ | ngtPush]" [scale]="1" [position]="[ roomService.threePos.x, roomService.threePos.y, roomService.threePos.z ]" />
+    <portfolio-ngt-spheres />
     <ngt-orbit-controls *args="[camera, glDom]" [enableDamping]="true" />
   `,
 })
 export class SceneComponent {
   
-  private _room
-  get room () { return this._room }
+  get roomService () { return this._roomService }
 
-  constructor ({ room }: PortfolioService) {
-    this._room = room
-  }
+  constructor ( private _roomService:RoomService) { }
   readonly model$ = injectNgtLoader(() => GLTFLoader, 'assets/silent_hill_2_baldwin_study_room_normal.glb').pipe(map((model:any) => model.scene));
 
   private readonly store = inject(NgtStore);

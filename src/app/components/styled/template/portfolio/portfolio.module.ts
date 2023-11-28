@@ -4,36 +4,39 @@ import { CommonModule } from '@angular/common';
 import { NgtPush, NgtArgs, NgtCanvas } from 'angular-three';
 
 import { PortfolioComponent } from './portfolio.component';
-import { ProjectsThreeComponent } from './projects/projects.component'
 import { SceneComponent } from './scene.component';
-import { SphereComponent } from './sphere.component';
-import { SummaryThreeComponent } from './summary/summary.component';
-import { PosComponent } from './pos.component';
+import { SpheresComponent } from './sections/spheres.component';
+import { ProjectsComponent } from './sections/projects/projects.component'
+import { SummaryComponent } from './sections/summary/summary.component';
+import { PosComponent } from './sections/pos.component';
 
+
+import { MatCardModule } from '@angular/material/card';
 
 
 @NgModule({
   declarations: [
+    SpheresComponent,
     PosComponent,
     PortfolioComponent,
     SceneComponent,
-    ProjectsThreeComponent,
-    SphereComponent,
-    SummaryThreeComponent
+    SummaryComponent,
+    ProjectsComponent
   ],
   imports: [
     CommonModule,
     NgtCanvas,
     NgtPush,
-    NgtArgs
+    NgtArgs,
+    MatCardModule
   ],
   exports: [
+    SpheresComponent,
     PosComponent,
     PortfolioComponent,
-    ProjectsThreeComponent,
     SceneComponent,
-    SphereComponent,
-    SummaryThreeComponent
+    SummaryComponent,
+    ProjectsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

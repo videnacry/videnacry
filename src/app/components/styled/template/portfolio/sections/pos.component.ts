@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
-import { PortfolioSection, PortfolioService } from './portfolio.service';
+import { SummaryService } from './services/summary.service';
+import { ProjectsService } from './services/projects.service';
 
 
 @Component({
@@ -22,22 +23,18 @@ import { PortfolioSection, PortfolioService } from './portfolio.service';
   </div>`
 })
 export class PosComponent {
-  private _projects: PortfolioSection = new PortfolioSection({ x: 0, y: 0, z: 0 })
+  
   get projects () { return this._projects }
-  private _summary: PortfolioSection = new PortfolioSection({ x: 0, y: 0, z: 0 })
   get summary () { return this._summary }
 
-  constructor ({ projects: aProjects, summary: aSummary }: PortfolioService) {
-    this._projects = aProjects
-    this._summary = aSummary
-  }
+  constructor (private _summary:SummaryService, private _projects:ProjectsService) { }
 
-  setProjectsX = ($event:any):void  => { this.projects.setX($event.target.value) }
-  setProjectsY = ($event:any):void  => { this.projects.setY($event.target.value) }
-  setProjectsZ = ($event:any):void  => { this.projects.setZ($event.target.value) }
+  setProjectsX = ($event:any):void  => { this.projects.updateThreePos({ x: $event.target.value }) }
+  setProjectsY = ($event:any):void  => { this.projects.updateThreePos({ y: $event.target.value }) }
+  setProjectsZ = ($event:any):void  => { this.projects.updateThreePos({ z: $event.target.value }) }
   
-  setSummaryX = ($event:any):void  => { this.summary.setX($event.target.value) }
-  setSummaryY = ($event:any):void  => { this.summary.setY($event.target.value) }
-  setSummaryZ = ($event:any):void  => { this.summary.setZ($event.target.value) }
+  setSummaryX = ($event:any):void  => { this.summary.updateThreePos({ x: $event.target.value }) }
+  setSummaryY = ($event:any):void  => { this.summary.updateThreePos({ y: $event.target.value }) }
+  setSummaryZ = ($event:any):void  => { this.summary.updateThreePos({ z: $event.target.value }) }
 
 }

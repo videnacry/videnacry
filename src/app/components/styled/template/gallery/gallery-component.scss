@@ -20,7 +20,9 @@ iframe {
     height: auto;
     margin: 5%;
 }
-
+:host ::ng-deep img {
+    border: 1px solid white;
+  }
 .filter {
     max-width: 30vw;
 }

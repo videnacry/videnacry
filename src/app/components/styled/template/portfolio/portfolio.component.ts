@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 
 import { SceneComponent } from './scene.component';
+import { SummaryService } from './sections/services/summary.service';
+import { ProjectsService } from './sections/services/projects.service';
 
 
 @Component({
@@ -8,10 +10,12 @@ import { SceneComponent } from './scene.component';
   template: `
   <ngt-canvas [sceneGraph]="SceneGraph" />
   <portfolio-pos />
+  <portfolio-summary *ngIf="summaryService.isActive" />
+  <portfolio-projects *ngIf="projectsService.isActive"/>
   `,
   styleUrls: ['./portfolio.component.scss']
 })
 export class PortfolioComponent {
-  readonly SceneGraph = SceneComponent;
-
+  readonly SceneGraph = SceneComponent
+  constructor (readonly summaryService:SummaryService, readonly projectsService:ProjectsService) { }
 }
