@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, AsyncPipe } from '@angular/common';
 
 import { NgtPush, NgtArgs, NgtCanvas } from 'angular-three';
 
@@ -19,8 +19,19 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatDividerModule } from '@angular/material/divider';
+import {
+  MatDialogModule
+} from '@angular/material/dialog';
+import { GoArtworksComponent } from './sections/artworks/go-artworks.component';
+import { HobbiesComponent } from './sections/hobbies/hobbies.component';
+// import { ManualButtonComponent, ManualModalComponent } from './manual/manual.component';
+
+
+import { SummaryService } from './sections/services/summary.service';
+import { ProjectsService } from './sections/services/projects.service';
+import { HobbiesService } from './sections/services/hobbies.service';
+import { GoArtworksService } from './sections/services/go-artworks.service';
 
 
 @NgModule({
@@ -30,7 +41,11 @@ import { MatDividerModule } from '@angular/material/divider';
     PortfolioComponent,
     SceneComponent,
     SummaryComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    GoArtworksComponent,
+    HobbiesComponent,
+    // ManualButtonComponent,
+    // ManualModalComponent
   ],
   imports: [
     CommonModule,
@@ -45,9 +60,9 @@ import { MatDividerModule } from '@angular/material/divider';
     MatChipsModule,
     MatStepperModule,
     MatButtonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatDialogModule,
+    AsyncPipe
   ],
   exports: [
     SpheresComponent,
@@ -55,7 +70,17 @@ import { MatDividerModule } from '@angular/material/divider';
     PortfolioComponent,
     SceneComponent,
     SummaryComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    GoArtworksComponent,
+    HobbiesComponent,
+    // ManualButtonComponent,
+    // ManualModalComponent
+  ],
+  providers: [
+    SummaryService,
+    ProjectsService,
+    HobbiesService,
+    GoArtworksService
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

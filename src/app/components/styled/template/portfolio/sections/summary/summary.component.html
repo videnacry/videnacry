@@ -1,16 +1,15 @@
-<mat-card class="portfolio-summary" (click)="stopPropagation($event)">
+<mat-card>
       
     <mat-card-header>
         <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>Berón Gamboa Gavilanes</mat-card-title>
-        <mat-card-subtitle>Full stack developer</mat-card-subtitle>
+        <mat-card-title>{{spelledOut}}</mat-card-title>
+        <mat-card-subtitle>Berón Gamboa Gavilanes</mat-card-subtitle>
     </mat-card-header>
 
     <mat-divider />
 
-    <mat-card-content>
-        <mat-card-subtitle>Summary</mat-card-subtitle>
-        <p [style]="{textAlign:'justify'}">{{ spelledOut }}</p>
+    <mat-card-content *ngIf="showContent">
+        <p [style]="{textAlign:'justify'}">{{ text }}</p>
         <mat-card-subtitle>Technology stack</mat-card-subtitle>
 
         <mat-chip-set aria-label="technology stack" class="space-around_children">

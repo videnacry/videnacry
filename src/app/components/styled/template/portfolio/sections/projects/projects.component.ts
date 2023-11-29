@@ -1,10 +1,11 @@
-import { ApplicationRef, Component, HostBinding, HostListener } from '@angular/core';
+import { ApplicationRef, Component, HostBinding } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { StepperOrientation } from '@angular/material/stepper';
 
+import { iSpellText } from '../services/utils';
 import { ProjectsService } from '../services/projects.service';
 
 import projects from './projects';
@@ -14,7 +15,6 @@ import projects from './projects';
   templateUrl: './projects.component.html',
   styles: [`
     .space-around_children::ng-deep * { justify-content: space-around }
-    .example-card { left: 50%; transform: translateX(-50%); max-width: 500px; width: 90% }
     .example-header-image {
       background-image: url('/assets/profile-circle-small.webp');
       background-size: cover;
@@ -23,11 +23,29 @@ import projects from './projects';
 })
 export class ProjectsComponent {
 
-  projects = projects
-
   stepperOrientation: Observable<StepperOrientation>;
 
-  constructor (private _state:ProjectsService, private _applicationRef:ApplicationRef, breakpointObserver: BreakpointObserver,) {
+  projects = projects
+  showProjects = false
+  
+  spelledOut = ''
+  spellText:iSpellText = {
+    chars: 'Personal projects',
+    isActive: true
+  }
+  constructor (private _state:ProjectsService, private _applicationRef:ApplicationRef, breakpointObserver: BreakpointObserver) {
+    this._state.spellSubscriber(this.spellText).subscribe({
+      next: spellOut => {
+        this.spelledOut = spellOut;
+        this._applicationRef.tick()
+      },
+      error: err => console.error('Observable emitted an error: ' + err),
+      complete: () => {
+        this.showProjects = true
+        this._applicationRef.tick()
+      }
+    });
+
     this.stepperOrientation = breakpointObserver
     .observe('(min-width: 800px)')
     .pipe(map(({matches}) => (matches ? 'horizontal' : 'vertical')));
@@ -35,6 +53,5 @@ export class ProjectsComponent {
 
   stopPropagation = (e:Event) => { e.stopPropagation(); this._applicationRef.tick() }
 
-  @HostBinding("style") hostStyle = "position: absolute; top: 0; left: 0; width: 100%; height: max-content; padding: 10vh 0"
-  @HostListener("click") closeModal = () => { this._state.toggleIsActive(); this._applicationRef.tick() }
+  @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
 }

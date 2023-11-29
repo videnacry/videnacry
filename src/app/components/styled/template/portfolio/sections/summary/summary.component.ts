@@ -1,6 +1,6 @@
-import { ApplicationRef, Component, HostBinding, HostListener } from '@angular/core';
+import { ApplicationRef, Component, HostBinding } from '@angular/core';
 
-import { iSpellText } from '../services/section.service.template';
+import { iSpellText } from '../services/utils';
 import { SummaryService } from '../services/summary.service';
 
 
@@ -9,7 +9,6 @@ import { SummaryService } from '../services/summary.service';
   templateUrl: './summary.component.html',
   styles: [`
     .space-around_children::ng-deep * { justify-content: space-around }
-    .portfolio-summary { left: 50%; transform: translateX(-50%); max-width: 400px; width: 90% }
     .example-header-image {
         background-image: url("/assets/profile-circle-small.webp");
         background-size: cover;
@@ -18,15 +17,17 @@ import { SummaryService } from '../services/summary.service';
 })
 export class SummaryComponent {
 
-  technologies:string[] = []
+  technologies:string[] = [ 'THREE', 'C#', 'HTML', 'JS', 'ANGULAR', 'CSS', 'REACT', 'NODE', 'EXPRESS', 'TS', 'REDUX', 'ASP', 'UNITY3D', 'SQL', 'MONGO'];
 
+  text = `
+  As a developer I worked hard for the achievement of the best user experience including backoffice, databases and APIs.
+  Alone and in small groups, I participated in the creation of web applications using the latest technologies.
+  In big applications I resolved performance issues and functional entangles, changed technologies ,added processes, and tests.
+  `
+  showContent = false
   spelledOut = ''
   spellText:iSpellText = {
-    chars: `
-    As a developer I worked hard for the achievement of the best user experience including backoffice, databases and APIs.
-    Alone and in small groups, I participated in the creation of web applications using the latest technologies.
-    In big applications I resolved performance issues and functional entangles, changed technologies ,added processes, and tests.
-    `,
+    chars: 'Fullstack developer',
     isActive: true
   }
   constructor (private _state:SummaryService, private _applicationRef:ApplicationRef) {
@@ -37,14 +38,11 @@ export class SummaryComponent {
       },
       error: err => console.error('Observable emitted an error: ' + err),
       complete: () => {
-        this.technologies = [ 'THREE', 'C#', 'HTML', 'JS', 'ANGULAR', 'CSS', 'REACT', 'NODE', 'EXPRESS', 'TS', 'REDUX', 'ASP', 'UNITY3D', 'SQL', 'MONGO'];
+        this.showContent = true
         this._applicationRef.tick()
       }
     });
   }
 
-  stopPropagation = (e:Event) => e.stopPropagation()
-
-  @HostBinding("style") hostStyle = "position: absolute; top: 0; left: 0; width: 100%; height: max-content; padding: 10vh 0"
-  @HostListener("click") closeModal = () => { this._state.toggleIsActive(); this.spellText.isActive = false; this._applicationRef.tick() }
+  @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
 }

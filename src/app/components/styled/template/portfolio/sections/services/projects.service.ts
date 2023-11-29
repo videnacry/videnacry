@@ -1,14 +1,22 @@
 import { Injectable } from '@angular/core';
+
 import { SectionServiceTemplate } from './section.service.template';
+import { MatDialog } from '@angular/material/dialog';
+import { ProjectsComponent } from '../projects/projects.component';
+
+import { PortfolioModule } from '../../portfolio.module';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: null
 })
 export class ProjectsService extends SectionServiceTemplate {
 
-  constructor () {
+  constructor (matDialog:MatDialog) {
     const threePos = { x: -30, y: -18, z: -4 }
-    super({ threePos , isActive: false })
+    const sphereClickHandler = () => {
+      this.openDialog()
+    }
+    super( matDialog, threePos, sphereClickHandler, { width: '500px', component: ProjectsComponent } )
   }
   
 }

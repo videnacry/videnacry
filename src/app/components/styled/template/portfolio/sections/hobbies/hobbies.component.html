@@ -1,0 +1,30 @@
+<mat-card >
+        
+    <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{spelledOut}}</mat-card-title>
+        <mat-card-subtitle>Berón Gamboa Gavilanes</mat-card-subtitle>
+    </mat-card-header>
+
+    <mat-divider />
+
+    <mat-card-content *ngIf="showContent">
+        <p [style]="{textAlign:'justify'}">
+            I found great stories and values in anime and manga.
+            I like to meditate to get the best solution.
+            My desire is to grow a lot as a community!.
+        </p>
+
+        <p [style]="{textAlign:'justify'}">
+            I sometimes win in chess, jenga and climb trees x'D, on the other hand I usually can't win in ping pong, table football and bowling x'dd.
+        </p>
+
+    <mat-chip-set aria-label="technology stack" class="space-around_children">
+        <mat-chip selected defaultColor="accent" *ngFor="let hobby of hobbies">
+        {{hobby}}
+        </mat-chip>
+    </mat-chip-set>
+    
+</mat-card-content>
+
+</mat-card>

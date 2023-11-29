@@ -3,6 +3,8 @@ import { Component } from '@angular/core';
 import { SummaryService } from './services/summary.service';
 import { ProjectsService } from './services/projects.service';
 import { SectionServiceTemplate } from './services/section.service.template';
+import { HobbiesService } from './services/hobbies.service';
+import { GoArtworksService } from './services/go-artworks.service';
 
 
 @Component({
@@ -29,7 +31,7 @@ export class PosComponent {
 
   positions
 
-  constructor (_summaryService:SummaryService, _projectsService:ProjectsService) {
+  constructor (_summaryService:SummaryService, _projectsService:ProjectsService, _hobbiesService:HobbiesService, _goArtworksService:GoArtworksService) {
 
     /**
      * returns an object with each section (summary, projects...) sphere position and setter to modify it
@@ -53,10 +55,14 @@ export class PosComponent {
       return res
     }
 
-    const summaryThreePos = getSectionThreePos('Summary sphere', _summaryService)
-    const projectsThreePos = getSectionThreePos('Projects sphere', _projectsService)
+    const services = [ 
+      {name:'Summary sphere', service:_summaryService}, 
+      {name:'Projects sphere', service:_projectsService}, 
+      {name:'Hobbies sphere', service:_hobbiesService}, 
+      {name:'Go artworks sphere', service:_goArtworksService} 
+    ]
 
-    this.positions = [ summaryThreePos, projectsThreePos ]
+    this.positions = services.map(({name, service}) => getSectionThreePos(name, service))
   }
 
 
