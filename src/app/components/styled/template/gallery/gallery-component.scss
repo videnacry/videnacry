@@ -2,12 +2,10 @@
     font-family: arigatou;
     src: url('./fonts/arigatou.ttf');
 }
-  
-* {
-  font-family: arigatou;
+
+:host ::ng-deep h1, :host ::ng-deep h2, * ::ng-deep{
+    font-family: arigatou;
 }
-
-
 
 
 :host {

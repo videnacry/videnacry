@@ -32,7 +32,7 @@ export class ManualButtonComponent {
       spelledOut: '',
       spellText: {
         chars: `
-        Manual
+        Manual - Help
         `,
         isActive: true
       },
@@ -65,18 +65,20 @@ export class ManualButtonComponent {
   }
 
   openDialog (width:string): void {
+    
     spellSubscriber(this.data.spellText).subscribe({
         next: spellOut => this.data.spelledOut = spellOut,
         error: err => console.error('Observable emitted an error: ' + err),
         complete: () => this.data.showContent = true
     });
+
     this.dialog.open(ManualModalComponent, {
         maxWidth: '90vw',
         width,
         enterAnimationDuration: '800ms',
         exitAnimationDuration: '800ms',
-        data: this.data
-    });
+        data: this.data,
+    }).afterClosed().subscribe({ complete: () => this.data.showContent = false})
   }
 }
 

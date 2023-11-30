@@ -21,6 +21,7 @@ import { GalleryTabletComponent } from './components/styled/template/gallery/gal
 import { ShapeSizeComponent } from './components/styled/atom/shape-size/shape-size.component';
 import { GalleryManualComponent } from './components/styled/template/gallery/gallery-manual/gallery-manual.component';
 import { BorderAnimatedComponent } from './components/styled/atom/border-animated/border-animated.component';
+
 import { PortfolioModule } from './components/styled/template/portfolio/portfolio.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 

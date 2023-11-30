@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ApplicationRef, Component } from '@angular/core';
 import { GalleryComponent } from '../gallery-component';
 
 @Component({
@@ -7,5 +7,7 @@ import { GalleryComponent } from '../gallery-component';
   styleUrls: ['./gallery-phone.component.scss']
 })
 export class GalleryPhoneComponent extends  GalleryComponent{
-
+  constructor(_applicationRef:ApplicationRef) {
+    super(_applicationRef)
+  }
 }

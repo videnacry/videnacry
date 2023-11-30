@@ -1,4 +1,4 @@
-import { TemplateRef } from "@angular/core";
+import { ApplicationRef, TemplateRef } from "@angular/core";
 import { ColumnOrRowProjection } from "../../molecule/column-or-row/class";
 import { GalleryImages } from "./db/gallery.images";
 import { GalleryImage } from "../../molecule/gallery-image/class";
@@ -6,6 +6,8 @@ import { GalleryImage } from "../../molecule/gallery-image/class";
 
 
 export class GalleryComponent {
+
+  constructor (private _applicationRef:ApplicationRef) {}
 
 
 
@@ -83,6 +85,7 @@ export class GalleryComponent {
       if (this.isLimitedToOneModal) this.removeAllModals()
       this.imagesGroup[pGroupName].push(pImage)
     }
+    this._applicationRef.tick()
   }
 
   removeAllModals() {
