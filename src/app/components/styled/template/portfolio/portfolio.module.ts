@@ -3,13 +3,6 @@ import { CommonModule, AsyncPipe } from '@angular/common';
 
 import { NgtPush, NgtArgs, NgtCanvas } from 'angular-three';
 
-import { PortfolioComponent } from './portfolio.component';
-import { SceneComponent } from './scene.component';
-import { SpheresComponent } from './sections/spheres.component';
-import { ProjectsComponent } from './sections/projects/projects.component'
-import { SummaryComponent } from './sections/summary/summary.component';
-import { PosComponent } from './sections/pos.component';
-
 
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -20,12 +13,20 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
-import {
-  MatDialogModule
-} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSortModule } from '@angular/material/sort';
+
+
+import { PortfolioComponent } from './portfolio.component';
+import { SceneComponent } from './scene.component';
+import { SpheresComponent } from './sections/spheres.component';
+import { ProjectsComponent } from './sections/projects/projects.component'
+import { SummaryComponent } from './sections/summary/summary.component';
+// import { PosComponent } from './sections/pos.component'; ---------------- this component is just for develop (change spheres position in viewport)
 import { GoArtworksComponent } from './sections/artworks/go-artworks.component';
 import { HobbiesComponent } from './sections/hobbies/hobbies.component';
-// import { ManualButtonComponent, ManualModalComponent } from './manual/manual.component';
+import { ManualButtonComponent } from './manual/manual-button.component';
+import { ManualModalComponent } from './manual/manual-modal.component';
 
 
 import { SummaryService } from './sections/services/summary.service';
@@ -37,18 +38,19 @@ import { GoArtworksService } from './sections/services/go-artworks.service';
 @NgModule({
   declarations: [
     SpheresComponent,
-    PosComponent,
+    // PosComponent, ---------------- this component is just for develop (change spheres position in viewport)
     PortfolioComponent,
     SceneComponent,
     SummaryComponent,
     ProjectsComponent,
     GoArtworksComponent,
     HobbiesComponent,
-    // ManualButtonComponent,
-    // ManualModalComponent
+    ManualButtonComponent,
+    ManualModalComponent
   ],
   imports: [
     CommonModule,
+    AsyncPipe,
     NgtCanvas,
     NgtPush,
     NgtArgs,
@@ -62,19 +64,19 @@ import { GoArtworksService } from './sections/services/go-artworks.service';
     MatButtonModule,
     MatDividerModule,
     MatDialogModule,
-    AsyncPipe
+    MatSortModule
   ],
   exports: [
     SpheresComponent,
-    PosComponent,
+    // PosComponent, ---------------- this component is just for develop (change spheres position in viewport)
     PortfolioComponent,
     SceneComponent,
     SummaryComponent,
     ProjectsComponent,
     GoArtworksComponent,
     HobbiesComponent,
-    // ManualButtonComponent,
-    // ManualModalComponent
+    ManualButtonComponent,
+    ManualModalComponent
   ],
   providers: [
     SummaryService,

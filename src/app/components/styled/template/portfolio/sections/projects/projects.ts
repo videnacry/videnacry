@@ -40,7 +40,7 @@ const getProjects = [
         - Creation of 3D models
         `,
         img: '/assets/coldsanctuary.webp',
-        techStack: ['C#', 'unity3D'],
+        techStack: ['C#', 'unity3D', 'blender', '3dsmax'],
         repo: 'https://github.com/videnacry/Cold-Sanctuary'
         }
     ]

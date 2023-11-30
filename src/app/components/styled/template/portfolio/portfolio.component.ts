@@ -7,8 +7,10 @@ import { SceneComponent } from './scene.component';
   selector: 'app-portfolio',
   template: `
   <ngt-canvas [sceneGraph]="SceneGraph" class="canvas"/>
-  <portfolio-pos />
-  <!-- <portfolio-manual-button [styles]="{position:'absolute', bottom:0, right:0}"/> -->
+  
+  <!-- <portfolio-pos /> this element is just for developer (change the spheres position)-->
+
+  <portfolio-manual-button/>
   `,
   styles: [`
   :host {
