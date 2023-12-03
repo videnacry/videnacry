@@ -36,12 +36,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .cdk-overlay-container {
-  position: absolute;
+  overflow: auto;
 }
-.cdk-overlay-backdrop {}
 .dialog-no-bg .mat-mdc-dialog-container .mdc-dialog__surface {
   background-color: transparent;
-}
-.fixed {
-  position: fixed;
 }

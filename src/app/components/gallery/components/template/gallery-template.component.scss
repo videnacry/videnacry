@@ -1,0 +1,29 @@
+@font-face {
+    font-family: arigatou;
+    src: url('../../fonts/arigatou.ttf');
+}
+
+:host ::ng-deep h1, :host ::ng-deep h2, * ::ng-deep{
+    font-family: arigatou;
+}
+
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+}
+iframe {
+    width: 90%;
+    max-height: 90%;
+    height: auto;
+    margin: 5%;
+}
+:host ::ng-deep img {
+    border: 1px solid white;
+  }
+.filter {
+    max-width: 30vw;
+}
+.filter p {
+    margin: 0
+}
