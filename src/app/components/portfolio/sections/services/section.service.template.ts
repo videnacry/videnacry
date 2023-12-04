@@ -23,6 +23,7 @@ export class SectionServiceTemplate {
     if (this._modal) {
       this.dialog.open(this._modal.component, {
         panelClass: 'dialog-no-bg',
+        backdropClass: 'fixed',
         maxWidth: '90vw',
         width: this._modal.width,
         enterAnimationDuration: '800ms',

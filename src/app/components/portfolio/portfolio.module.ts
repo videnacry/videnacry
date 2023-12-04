@@ -19,7 +19,7 @@ import { MatSortModule } from '@angular/material/sort';
 
 import { PortfolioComponent } from './portfolio.component';
 import { SceneComponent } from './scene.component';
-import { SpheresComponent } from './sections/spheres.component';
+import { SpheresComponent } from './sections/spheres/spheres.component';
 import { ModalHeaderComponent } from './components/modal-header.component';
 import { ProjectsComponent } from './sections/projects/projects.component'
 import { SummaryComponent } from './sections/summary/summary.component';

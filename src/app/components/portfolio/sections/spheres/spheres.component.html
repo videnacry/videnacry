@@ -1,0 +1,13 @@
+
+<ngt-mesh *ngFor="let sphere of spheres" 
+(click)="sphere.click()" 
+(pointerover)="sphere.isHovered = true; sphere.orbit.isActive = false" 
+(pointerout)="sphere.isHovered = false; sphere.orbit.isActive = true"
+[position]="[ sphere.service.threePos.x, sphere.service.threePos.y, sphere.service.threePos.z ]" 
+(beforeRender)="sphere.rotate($any($event))"
+[scale]="1.4"]
+>
+  <ngt-sphere-geometry/>
+  <ngt-mesh-standard-material [color]="sphere.isHovered ? sphere.hoveredColor : sphere.defaultColor" />
+</ngt-mesh>
+

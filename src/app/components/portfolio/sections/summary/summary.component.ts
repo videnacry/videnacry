@@ -26,7 +26,7 @@ export class SummaryComponent {
     isActive: true
   }
   constructor (private _applicationRef:ApplicationRef, private _dialogRef:DialogRef) {}
-  
+
   loadedHandler = () => {
     this.showContent = true
     this._applicationRef.tick()
@@ -36,5 +36,4 @@ export class SummaryComponent {
     this._dialogRef.close()
   }
 
-  @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
 }

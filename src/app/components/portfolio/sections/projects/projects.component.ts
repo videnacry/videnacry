@@ -49,7 +49,6 @@ export class ProjectsComponent {
     this._dialogRef.close()
   }
 
-  stopPropagation = (e:Event) => { e.stopPropagation(); this._applicationRef.tick() }
 
-  @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
+  // @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
 }
