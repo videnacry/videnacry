@@ -1,4 +1,4 @@
-import { ApplicationRef, Component, HostBinding } from '@angular/core';
+import { ApplicationRef, Component, HostListener } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -50,5 +50,5 @@ export class ProjectsComponent {
   }
 
 
-  // @HostBinding("style") hostStyle = "display: block; height: max-content; padding: 10vh 0"
+  @HostListener('click') onClick = () => this._applicationRef.tick();
 }

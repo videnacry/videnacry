@@ -35,12 +35,10 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.cdk-overlay-container {
-  overflow: auto;
+.cdk-global-overlay-wrapper {
+  pointer-events: auto; // be able to scroll event
+  overflow-y: auto;
 }
 .dialog-no-bg .mat-mdc-dialog-container .mdc-dialog__surface {
   background-color: transparent;
-}
-.fixed {
-  position: fixed;
 }

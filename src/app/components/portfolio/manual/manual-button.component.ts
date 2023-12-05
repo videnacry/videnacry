@@ -67,6 +67,7 @@ export class ManualButtonComponent {
   openDialog (width:string): void {
 
     this.dialog.open(ManualModalComponent, {
+        panelClass: 'dialog-no-bg',
         maxWidth: '90vw',
         width,
         enterAnimationDuration: '800ms',

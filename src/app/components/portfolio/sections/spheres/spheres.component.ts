@@ -21,7 +21,7 @@ export class SpheresComponent {
   constructor (summaryService:SummaryService, projectsService:ProjectsService, goArtworksService:GoArtworksService, hobbiesService:HobbiesService, applicationRef:ApplicationRef) {
     const services = [ summaryService, projectsService, goArtworksService, hobbiesService ]
 
-    const orbit = { index: 0, type: Math.random(), isActive: true }
+    const orbit = { index: -1, type: Math.random(), isActive: true, isForward: true }
     const defaultStyles = {
       isHovered: false,
       defaultColor: Color.NAMES.crimson,
@@ -40,14 +40,19 @@ export class SpheresComponent {
       sphere.rotate = (event) => {
 
         if (sphere.orbit.isActive) {
-
-          if (sphere.orbit.index > 300) {
-            sphere.orbit.index = 0
+          if (sphere.orbit.index < 0) {
+            sphere.orbit.isForward = true
             sphere.orbit.type = Math.random()
           }
-          const { x, y, z} = calculateOrbitCoordinates(sphere.orbit.index, 300, sphere.orbit.type, sphere.service.threePos)
+
+          if (sphere.orbit.index > 120 || sphere.orbit.isForward == false) {
+            sphere.orbit.index -= 1
+            sphere.orbit.isForward = false
+          } else if (sphere.orbit.isForward == true) {
+            sphere.orbit.index += 1
+          }
+          const { x, y, z } = calculateOrbitCoordinates(sphere.orbit.index, 120, sphere.orbit.type, sphere.service.threePos)
           event.object.position.set(x, y, z)
-          sphere.orbit.index += 1
 
         }
 

@@ -10,6 +10,8 @@ import { DialogRef } from '@angular/cdk/dialog';
 @Component({
     selector: 'portfolio-manual-modal',
     template: `
+    <div [style]="{height:'10vh'}" (click)="closeModal()"></div>
+
     <mat-card>
 
     <modal-header-portfolio [spellText]="data.spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
@@ -33,29 +35,18 @@ import { DialogRef } from '@angular/cdk/dialog';
                 <th mat-sort-header="content">Content</th>
                 <th mat-sort-header="location">Location</th>
                 </tr>
-            
-                <!-- 
-                    this is for using the track from the matSort, to make it work is needed {
-                        "angularCompilerOptions": {
-                            ....
-                            "_enabledBlockTypes": [
-                            "if", "switch", "for", "defer"
-                            ]
-                        }
-                    }
-                @for (sphere of spheres; track sphere) { 
-                -->
                 <tr *ngFor="let sphere of data.spheres;">
                     <td>{{ sphere.content }}</td>
                     <td>{{ sphere.location }}</td>
                 </tr>
-                <!-- } -->
             </table>
 
         </mat-card-content>
 
 
     </mat-card>
+    <div [style]="{height:'10vh'}" (click)="closeModal()"></div>
+
     `,
     styles: [`
     .space-around_children::ng-deep * { justify-content: space-around }

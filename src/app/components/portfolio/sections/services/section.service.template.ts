@@ -10,12 +10,10 @@ export interface iPos { x?: number, y?: number, z?: number }
 export class SectionServiceTemplate {
 
   get threePos () { return this._threePos }
-  get sphereClickHandler () { return this._sphereClickHandler }
 
   constructor (
     public dialog: MatDialog, 
     private _threePos = { x:0, y:0, z:0 },
-    private _sphereClickHandler: () => void,
     private _modal?:{width:string, component:ComponentType<any>} 
   ) { }
   
@@ -23,12 +21,11 @@ export class SectionServiceTemplate {
     if (this._modal) {
       this.dialog.open(this._modal.component, {
         panelClass: 'dialog-no-bg',
-        backdropClass: 'fixed',
         maxWidth: '90vw',
         width: this._modal.width,
         enterAnimationDuration: '800ms',
         exitAnimationDuration: '800ms'
-      });
+      })
     } else {
       throw new Error('There isn\'t any modal to show, please make sure to pass a ComponentType<any> instance to the constructor')
     }

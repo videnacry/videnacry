@@ -13,10 +13,8 @@ export class HobbiesService extends SectionServiceTemplate {
 
   constructor (matDialog:MatDialog) {
     const threePos = { x: 28, y: -15, z: 20 }
-    const sphereClickHandler = () => {
-      this.openDialog()
-    }
-    super( matDialog, threePos, sphereClickHandler, { width: '360px', component: HobbiesComponent } )
+
+    super( matDialog, threePos, { width: '360px', component: HobbiesComponent } )
   }
   
 }

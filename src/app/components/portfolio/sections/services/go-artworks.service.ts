@@ -12,10 +12,8 @@ export class GoArtworksService extends SectionServiceTemplate {
 
   constructor (matDialog:MatDialog) {
     const threePos = { x: 40, y: -2, z: -26 }
-    const sphereClickHandler = () => {
-      this.openDialog()
-    }
-    super( matDialog, threePos, sphereClickHandler, { width: '300px', component: GoArtworksComponent } )
+    
+    super( matDialog, threePos, { width: '300px', component: GoArtworksComponent } )
   }
   
 }

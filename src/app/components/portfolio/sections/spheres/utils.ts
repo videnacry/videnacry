@@ -41,7 +41,7 @@ export const calculateOrbitCoordinates = (index:number, totalCalls:number, rando
      theta = 2 * Math.PI * (index / totalCalls);
    }
    
-     const radius = 3; // You can adjust the radius as needed
+     const radius = 5; // You can adjust the radius as needed
    
      x += radius * Math.sin(phi) * Math.cos(theta);
      y += radius * Math.sin(phi) * Math.sin(theta);

@@ -20,6 +20,7 @@ import { SceneComponent } from './scene.component';
   }
   .canvas {
       position: fixed;
+      cursor: grab;
   }
   `]
 })

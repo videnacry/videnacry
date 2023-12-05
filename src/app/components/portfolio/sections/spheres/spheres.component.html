@@ -5,7 +5,7 @@
 (pointerout)="sphere.isHovered = false; sphere.orbit.isActive = true"
 [position]="[ sphere.service.threePos.x, sphere.service.threePos.y, sphere.service.threePos.z ]" 
 (beforeRender)="sphere.rotate($any($event))"
-[scale]="1.4"]
+[scale]="2.2"]
 >
   <ngt-sphere-geometry/>
   <ngt-mesh-standard-material [color]="sphere.isHovered ? sphere.hoveredColor : sphere.defaultColor" />
