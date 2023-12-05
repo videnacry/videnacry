@@ -7,6 +7,7 @@ import { GalleryImage } from "../molecule/gallery-image/class";
 
 export class GalleryTemplateComponent {
 
+  get applicationRef() { return this._applicationRef }
   constructor (private _applicationRef:ApplicationRef) {}
 
 

@@ -66,6 +66,8 @@ $base-bg-img: radial-gradient(circle at 50% -100%, rgb(145 145 145) 10%, rgb(30,
     }
     &.horizontal-img>.options.is-manual {
         @include encircle-btn(width);
+        transform: translateX(-50%);
+        align-items: center;
     }
     &.vertical-img {
         >.frame {
