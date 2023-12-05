@@ -20,14 +20,20 @@ import { MatSortModule } from '@angular/material/sort';
 import { PortfolioComponent } from './portfolio.component';
 import { SceneComponent } from './scene.component';
 import { SpheresComponent } from './sections/spheres/spheres.component';
-import { ModalHeaderComponent } from './components/modal-header.component';
-import { ProjectsComponent } from './sections/projects/projects.component'
-import { SummaryComponent } from './sections/summary/summary.component';
 // import { PosComponent } from './sections/pos.component'; ---------------- this component is just for develop (change spheres position in viewport)
-import { GoArtworksComponent } from './sections/artworks/go-artworks.component';
-import { HobbiesComponent } from './sections/hobbies/hobbies.component';
+
+
 import { ManualButtonComponent } from './manual/manual-button.component';
 import { ManualModalComponent } from './manual/manual-modal.component';
+import { ModalHeaderComponent } from './components/modal-header.component';
+import { ExpandedImgComponent } from './components/modal-img.component';
+import { ModalImgComponent } from './components/modal-img.component';
+
+
+import { ProjectsComponent } from './sections/projects/projects.component'
+import { SummaryComponent } from './sections/summary/summary.component';
+import { GoArtworksComponent } from './sections/artworks/go-artworks.component';
+import { HobbiesComponent } from './sections/hobbies/hobbies.component';
 
 
 import { SummaryService } from './sections/services/summary.service';
@@ -48,7 +54,9 @@ import { GoArtworksService } from './sections/services/go-artworks.service';
     GoArtworksComponent,
     HobbiesComponent,
     ManualButtonComponent,
-    ManualModalComponent
+    ManualModalComponent,
+    ModalImgComponent,
+    ExpandedImgComponent
   ],
   imports: [
     CommonModule,

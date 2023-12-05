@@ -10,7 +10,7 @@ import { DialogRef } from '@angular/cdk/dialog';
   template: `
     <mat-card >
         
-    <modal-header-portfolio [spellText]="spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
+    <portfolio-modal-header [spellText]="spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
   
       <mat-card-content>
         <p [style]="{textAlign:'center'}">Do you want to go the artworks gallery?</p>

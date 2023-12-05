@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Sort } from '@angular/material/sort';
 
-import { iSpellText, spellSubscriber } from '../sections/services/utils';
+import { iSpellText } from '../sections/services/utils';
 import { ManualModalComponent } from './manual-modal.component';
 
 interface iSpheres { content: string, location: string }

@@ -2,7 +2,7 @@
 
 <mat-card>
 
-  <modal-header-portfolio [spellText]="spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
+  <portfolio-modal-header [spellText]="spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
 
   <mat-stepper [linear]="false" [orientation]="(stepperOrientation | async)!" *ngIf="showProjects">
     <mat-step  *ngFor="let project of projects" [label]="project.title">
@@ -13,7 +13,9 @@
 
           <mat-divider />
           <mat-card-subtitle>Screenshot</mat-card-subtitle>
-          <img mat-card-image [src]="project.img" [alt]="project.title" [style]="{width:'100%', height:'100%', marginBottom:'12px'}">
+          
+          <portfolio-modal-img [img]="project.img" [title]="project.title" />
+          
           <mat-divider />
 
           <mat-card-subtitle>Rol</mat-card-subtitle>

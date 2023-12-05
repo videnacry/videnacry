@@ -4,7 +4,7 @@ import { spellSubscriber, iSpellText } from '../sections/services/utils';
 
 
 @Component({
-    selector: 'modal-header-portfolio',
+    selector: 'portfolio-modal-header',
     template: `
     <mat-card-actions align="end">
         <button mat-button (click)="closeModal()">&times;</button>

@@ -14,7 +14,7 @@ import { DialogRef } from '@angular/cdk/dialog';
 
     <mat-card>
 
-    <modal-header-portfolio [spellText]="data.spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
+    <portfolio-modal-header [spellText]="data.spellText" [loadedHandler]="loadedHandler" [closeModal]="closeModal"/>
 
 
         <mat-card-content *ngIf="data.showContent">
@@ -26,7 +26,7 @@ import { DialogRef } from '@angular/cdk/dialog';
 
             <mat-divider />
             <mat-card-subtitle>Screenshot</mat-card-subtitle>
-            <img mat-card-image src="/assets/manual.webp" alt="manual" [style]="{width:'100%', height:'100%', marginBottom:'12px'}">
+            <portfolio-modal-img img="/assets/manual.webp" title="manual" />
             <mat-divider />
 
             <mat-card-subtitle>Map of the spheres</mat-card-subtitle>

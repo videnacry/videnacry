@@ -9,10 +9,6 @@ import { DialogRef } from '@angular/cdk/dialog';
   templateUrl: './hobbies.component.html',
   styles: [`
     .space-around_children::ng-deep * { justify-content: space-around }
-    .example-header-image {
-        background-image: url("/assets/profile-circle-small.webp");
-        background-size: cover;
-      }
   `]
 })
 export class HobbiesComponent {

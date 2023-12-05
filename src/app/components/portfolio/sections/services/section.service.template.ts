@@ -20,6 +20,7 @@ export class SectionServiceTemplate {
   openDialog (): void {
     if (this._modal) {
       this.dialog.open(this._modal.component, {
+        autoFocus: 'dialog',
         panelClass: 'dialog-no-bg',
         maxWidth: '90vw',
         width: this._modal.width,
