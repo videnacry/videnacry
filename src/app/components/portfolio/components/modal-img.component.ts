@@ -53,13 +53,14 @@ export class ModalImgComponent implements AfterViewChecked {
     styles: [`
         .img-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
             width: 100%;
             height: 100%;
         }
         .img {
-            width: 90%;
+            width: 60%;
             height: auto;
             cursor: zoom-in;
         }
@@ -67,8 +68,20 @@ export class ModalImgComponent implements AfterViewChecked {
             display: block;
         }
         .zoom-in>img {
-            width: 180%;
+            width: 136%;
             cursor: zoom-out;
+        }
+        @media screen and (max-aspect-ratio: 1.4 ) {
+            .zoom-in>img {
+                width: 180%;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translateY(-50%);
+            }
+            .img {
+            width: 90%;
+            }
         }
     `]
 })
